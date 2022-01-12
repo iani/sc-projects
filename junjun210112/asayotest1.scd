@@ -69,8 +69,8 @@
 //:  with both hands.
 { | buf = 0 |
 	var amp, src1, src2, ctl1, ctl2;
-	src1 = SinOsc.ar(400, 0, 0.1);
-	src2 = SinOsc.ar(400 * (7 / 4), 0, 0.1);
+	src1 = LFSaw.ar(100 * 3, 0, 0.05) * Decay.kr(Impulse.kr(2));
+	src2 = LFSaw.ar(100 * (7 / 4), 0, 0.05) * Decay.kr(Impulse.kr(5));
 	ctl1 = \asayoRz.in;
 	ctl2 = \asayoLz.in;
 	//Pan2.ar(src,
@@ -83,30 +83,30 @@
 	//) // level ath2z
 	//src;
 	[
-		src1 * Lag.kr(ctl1 > 0.55, 1.5),
-		src2 * Lag.kr(ctl2 > 0.55, 1.5)
+		src1 * Lag.kr(ctl1 > 0.55, 1.5) * LFNoise1.kr(2).range(0.1, 2),
+		src2 * Lag.kr(ctl2 > 0.55, 1.5)  * LFNoise1.kr(2).range(0.1, 2),
 	]
 
 } +> \asayo0;
 //:  with both hands.
 { | buf = 0 |
 	var amp, src1, src2, ctl1, ctl2;
-	src1 = SinOsc.ar(400 * (5 / 4), 0, 0.1);
-	src2 = SinOsc.ar(400 * (16 / 15), 0, 0.1);
+	src1 = LFTri.ar(100 * (5 / 4), 0, 0.15) * Decay.kr(Impulse.kr(5));
+	src2 = LFTri.ar(100 * (8 / 5), 0, 0.15) * Decay.kr(Impulse.kr(7));
 	ctl1 = \junRz.in;
 	ctl2 = \junLz.in;
 	//Pan2.ar(src,
 	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
 	//		src > 0.0
 	//)
-		//		Lag.kr(
+		//		Lag.kr
 		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
 		// * (src > 0.0)
 	//) // level ath2z
 	//src;
 	[
-		src1 * Lag.kr(ctl1 > 0.55, 1.5),
-		src2 * Lag.kr(ctl2 > 0.55, 1.5),
+		src1 * Lag.kr(ctl1 > 0.55, 1.5) * LFNoise1.kr(2).range(0.1, 2),
+		src2 * Lag.kr(ctl2 > 0.55, 1.5) * LFNoise1.kr(2).range(0.1, 2)
 	]
 } +> \jun0;
 //:
