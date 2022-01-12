@@ -15,10 +15,129 @@
 	);
 	Pan2.ar(src,
 		Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
-		Lag.kr(\asayoRz.in, 1.0) * 1) // level ath2z
-} +> \;
+		Lag.kr(LinLin.kr(\asayoRx.in, 0.48, 0.55, 0.0, 0.5), 1.0) * 1) // level ath2z
+} +> \asayo0;
+//:
+{ | buf = 0 |
+	var amp, src, ctl;
+	src = PinkNoise.ar(0.1);
+	ctl = \asayoRz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	src * Lag.kr(ctl > 0.55, 1.5)
+} +> \asayo0;
+//:
+{ | buf = 0 |
+	var amp, src, ctl;
+	src = SinOsc.ar(400, 0, 0.1);
+	ctl = \asayoRz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	src * Lag.kr(ctl > 0.55, 1.5)
+} +> \asayo0;
+//:
+{ | buf = 0 |
+	var amp, src, ctl;
+	src = SinOsc.ar(500, 0, 0.1);
+	ctl = \junLz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	src * Lag.kr(ctl > 0.55, 1.5)
+} +> \jun0;
+//:
+//:  with both hands.
+{ | buf = 0 |
+	var amp, src1, src2, ctl1, ctl2;
+	src1 = SinOsc.ar(400, 0, 0.1);
+	src2 = SinOsc.ar(400 * (7 / 4), 0, 0.1);
+	ctl1 = \asayoRz.in;
+	ctl2 = \asayoLz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	[
+		src1 * Lag.kr(ctl1 > 0.55, 1.5),
+		src2 * Lag.kr(ctl2 > 0.55, 1.5)
+	]
+
+} +> \asayo0;
+//:  with both hands.
+{ | buf = 0 |
+	var amp, src1, src2, ctl1, ctl2;
+	src1 = SinOsc.ar(400 * (5 / 4), 0, 0.1);
+	src2 = SinOsc.ar(400 * (16 / 15), 0, 0.1);
+	ctl1 = \junRz.in;
+	ctl2 = \junLz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	[
+		src1 * Lag.kr(ctl1 > 0.55, 1.5),
+		src2 * Lag.kr(ctl2 > 0.55, 1.5),
+	]
+} +> \jun0;
+//:
+{ | buf = 0 |
+	var amp, src, ctl;
+	src = SinOsc.ar(500, 0, 0.1);
+	ctl = \junLz.in;
+	//Pan2.ar(src,
+	//	1, // Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
+	//		src > 0.0
+	//)
+		//		Lag.kr(
+		//	LinLin.kr(ctl, 0.47, 0.65,  0.0, 1.5), 0.1)
+		// * (src > 0.0)
+	//) // level ath2z
+	//src;
+	src * Lag.kr(ctl > 0.55, 1.5)
+} +> \jun0;
+//:
+//
+//
+//
+//
+//
+
+//: ------ 2 ------ ~0:30
+\asayo0
+
 //: ------ 2 ------ ~0:30
 \asayo0 stop: 5;
+\asayo0.set(\buf, \birdcarmanshort.index);
 //: ------ 3 ------ ~0:35
 // preacherman solo - then takunia - then dialog preacherman-takunia
 { | buf = 0 |

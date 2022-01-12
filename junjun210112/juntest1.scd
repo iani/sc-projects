@@ -14,9 +14,13 @@
 		1, 0, 1, 2
 	);
 	Pan2.ar(src,
-		Lag.kr(LinLin.kr(\junLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
-		Lag.kr(\junRz.in, 1.0) * 1) // level ath2z
-} +> \;
+		Lag.kr(LinLin.kr(\junLz.in, 0.46, 0.54, 0.7, -0.7), 5.0), // pos ath1z
+		Lag.kr(LinLin.kr(\junLx.in, 0.5, 0.64, 0.0, 0.3), 0.1 ) // level ath2z
+	)
+} +> \jun0;
+//:
+\jun0.set(\buf, \birdcarman.index);
+//
 //: ------ 2 ------ ~0:30
 \jun0 stop: 5;
 //: ------ 3 ------ ~0:35
@@ -59,6 +63,7 @@
 //: ------ 5 ------ ~5:00
 // MAGABOVE - bufctl in left hand z
 // conrtrol seeems best on this one for dialog
+// WE KEEP THIS ONE FOR Jun
 {
 	var buf, in, chain;
 	buf = \buf.kr(\melodic_road.bufnum);
@@ -94,7 +99,7 @@
 	);
     Pan2.ar(IFFT(chain),
 		Lag.kr(LinLin.kr(\junRy.in, 0, 1, -1.0, 1.0), 1.0),
-		Lag.kr(LinLin.kr(\junRz.in, 0, 1, 0.0, 1.0), 1.0),
+		Lag.kr(LinLin.kr(\junRz.in, 0.45, 0.55, 0.0, 1.0), 1.0),
 	);
 	//	Pan2.ar(src, \junLy.in - 0.5, \junLz.in - 0.3);
 } +> \jun0;

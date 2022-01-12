@@ -6,11 +6,11 @@
 		1,
 		1, 0, 1, 2
 	);
-	Pan2.ar(
-		src,
-		LinLin.kr(\junRz.in, 0.0, 1.0, -0.7, 0.7),
-		LinLin.kr(\junLz.in, 0.0, 1.0, 0.0, 1.0)
-	)
+	// Pan2.ar(
+	// 	src,
+	// 	LinLin.kr(\junRz.in, 0.0, 1.0, -0.7, 0.7),
+	// 	LinLin.kr(\junLz.in, 0.0, 1.0, 0.0, 1.0)
+	// )
 } +> \jun0;
 //:
 
