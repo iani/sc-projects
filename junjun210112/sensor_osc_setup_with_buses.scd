@@ -1,9 +1,6 @@
 /* 12 Jan 2022 14:49
 Setup script.  Draft.
 */
-OSCFunc.trace(true, true);
-//:
-OSCFunc.trace(false);
 //: Setup busses and oscfunc
 var allbusnames, allbusses;
 allbusnames = ["jun", "asayo"].collect({ | name |
@@ -37,10 +34,3 @@ OSCFunc(
 	'/minibee/data'
 ).fix;
 //:
-~verbose = true;
-//:
-~verbose = false;
-//:
-Server.default.scope;
-//:
-[1, 2, 3].linlin(0, 10, 0, 1);

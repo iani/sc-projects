@@ -27,7 +27,8 @@ OSCFunc(
 			postf("sensor input. nr: %, x: %, y: %, z: %\n", nr, x, y, z);
 		};
 		buses = allbusses[nr - 1];
-		[x, y, z].linlin(0.43, 0.57, 0.0, 1.0) do: { | val, i |
+		// [x, y, z].linlin(0.43, 0.57, 0.0, 1.0) // not for now!
+		do: { | val, i |
 			buses[i].set(val);
 		}
 	},
