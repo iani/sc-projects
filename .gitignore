@@ -3,5 +3,7 @@
 *.wav
 *.WAV
 *.aiff
+*.aif
 *.AIFF
 tmp/
+*.aif
