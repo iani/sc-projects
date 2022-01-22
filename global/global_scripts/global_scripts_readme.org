@@ -1,7 +1,0 @@
-#+TITLE: Global_scripts_readme
-
-Some useful scripts for reference.
-Just notes.
-
-To be included in a list of scripts of a project,
-files should be placed at the top level of that project's folder.
