@@ -1,0 +1,29 @@
+#+TITLE: Simple_game_matrix220129
+
+Input:
+
+Conductor X horizontally
+Conductor Y vertically
+
+Example:
+
+* Starting position:
+
+Conductor X: I
+Conductor Y: IV
+
+* Conductor X next move:
+
+Conductor X looks at the column currently chosen by Conductor Y.  In this case this is column IV.
+
+Conductor X prefers those rows which have the largest value under column IV.
+
+** Result:  Row III
+
+* Conductor Y next move:
+
+Conductor Y looks at the row currently chosen by Conductor X.  In this case this is row III.
+
+Conductor Y prefers those rows which have the smallest value under row III.
+
+These are either III or VI
