@@ -69,7 +69,7 @@ SynthDef(\ev1, {|bus|
 	a = Dust.ar(50);
 	b = WhiteNoise.ar(1000);
 	c = GrainSin.ar(1, a, 0.1, b)/10;
-	Out.ar(bus, c);
+	Out.ar(bus, c.adsr);
 }).store;
 
 SynthDef(\ev2, {|bus|
@@ -78,14 +78,14 @@ SynthDef(\ev2, {|bus|
 	});
 	b = LFNoise2.ar(2, 0.1, 0.1);
 	c = DelayL.ar(a, 0.2, b);
-	Out.ar(bus, c);
+	Out.ar(bus, c.adsr);
 }).store;
 
 SynthDef(\ev3, {|bus|
 	a = LFNoise0.ar(LFNoise0.ar(1), 20, 30);
 	b = LFNoise1.ar(a, 48, 64).midicps;
 	c = SinOsc.ar(b)/4;
-	Out.ar(bus, c);
+	Out.ar(bus, c.adsr);
 }).store;
 
 SynthDef(\ev4, {|bus|
@@ -97,19 +97,19 @@ SynthDef(\ev4, {|bus|
 		f = Latch.ar(b, d);
 		PMOsc.ar(f, f*2.5, e**2, 0, e/4);
 	});
-	Out.ar(bus, c);
+	Out.ar(bus, c.adsr);
 }).store;
 
 SynthDef(\ev5, {|bus|
 	a = LFNoise1.ar(1, 3, 4);
 	b = SinOsc.ar(a);
 	c = BrownNoise.ar(b)/3;
-	Out.ar(bus, c);
+	Out.ar(bus, c.adsr);
 }).store;
 
 SynthDef(\ev6, {|bus|
 	a = SinOsc.ar(55)/4;
-	Out.ar(bus, a);
+	Out.ar(bus, a.adsr);
 }).store;
 )
 // ================================================================
@@ -131,7 +131,18 @@ SynthDef(\ev6, {|bus|
 	};
 	"\n\n===== DONE. Tested ev1-6. ======\n\n".postln;
 }.fork;
-//:
+//: Redoing the above with +> (sc-hacks-redux)
+{
+	((1..6) collect: { | i | format("ev%", i).asSymbol }) do: { | ev |
+		postf("Starting synthdef: % ...\n", ev);
+		ev +> \test;
+		5.wait;
+		postf("Freeing synthdef: % \n", ev);
+		\test.stop;
+		0.9.wait;
+	};
+	"\n\n===== DONE. Tested ev1-6. ======\n\n".postln;
+}.fork;
 
 //:all synthdefs in a loop
 {
