@@ -10,15 +10,22 @@ Game screen
 // Initialize
 
 (
-// Matrix M7 (p. 121)
-~mat = Array2D.fromArray(6, 6, [
--1,	1,	3,	-1,	1,	-1,
-1,	-1,	-1,	-1,	1,	-1,
-3,	-1,	-3,	5,	1,	-3,
--1,	3,	3,	-1,	-1,	-1,
-1,	-1,	1,	1,	-1,	-1,
--1,	-1,	-3,	-1,	-1,	3,
-]);
+//: Matrix M7 (p. 121)
+~xmat = [
+	[-1,	1,	3,	-1,	1,	-1],
+	[1,	-1,	-1,	-1,	1,	-1],
+	[3,	-1,	-3,	5,	1,	-3],
+	[-1,	3,	3,	-1,	-1,	-1],
+	[1,	-1,	1,	1,	-1,	-1],
+	[-1,	-1,	-3,	-1,	-1,	3],
+];
+
+~ymat = ~xmat.flop.neg;
+//:
+~xmat do: _.postln;
+~ymat do: _.postln;
+
+~mat = [~xmat, ~ymat];
 
 ~sel = [nil, nil];
 ~sco = [0, 0];
@@ -27,28 +34,23 @@ Game screen
 ~move = {|player, tactic|
 	var point, opponent, profit, synth;
 
-	opponent = player + 1 % 2;
+	opponent = 1 - player; // toggles between 1 and 0
 
 	// Add profit
-	if(~sel[opponent] != nil, {
-		if(player == 0, {
-			point = ~mat.colAt(~sel[opponent])[tactic];
-		}, {
-			point = ~mat.rowAt(~sel[opponent])[tactic];
-			point = point.neg;
-		});
+	~sel[opponent] !? {
+		point = ~mat[player][opponent][tactic];
 		~sco[player] = ~sco[player] + point;
-	});
+	};
 
 	~sel[player] = tactic;
 	~total_move = ~total_move + 1;
 
 	// Display the profits as hint, Player Y's in reciprocal
-	if(player == 0, {
-		profit = ~mat.rowAt(tactic).neg;
-	}, {
+	if (player == 0) {
+		profit = ~mat[player][tactic] rowAt(tactic).neg;
+	} {
 		profit = ~mat.colAt(tactic);
-	});
+	};
 
 	(["X", "Y"][player] + "chose" + tactic).postln;
 	("score" + ~sco[0] + ":" + ~sco[1]).postln;

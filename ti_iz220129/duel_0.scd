@@ -20,7 +20,7 @@ Game screen
 
 
 // Initialize
-
+//:
 (
 // Matrix M7 (p. 121)
 ~mat = Array2D.fromArray(6, 6, [
@@ -124,3 +124,4 @@ SynthDef(\ev6, {|bus|
 	Out.ar(bus, a);
 }).store;
 )
+//:
