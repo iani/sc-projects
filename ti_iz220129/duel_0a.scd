@@ -55,7 +55,7 @@ Game screen
 	// Display the profits as hint in reciprocal
 	profit = ~mat[player][tactic].neg;
 
-	(["X", "Y"][player] + "choosed" + tactic).postln;
+	(["X", "Y"][player] + "chose" + tactic).postln;
 	("score" + ~sco[0] + ":" + ~sco[1]).postln;
 	("next player is" + ["X", "Y"][opponent]).postln;
 	(["X", "Y"][opponent] ++ "'s profit" + profit).postln;
