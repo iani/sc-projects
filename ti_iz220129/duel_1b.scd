@@ -12,7 +12,6 @@
 	~ymat = ~xmat.flop.neg;
 	~mat = [~xmat, ~ymat];
 	~xwon = 0;
-	~unused_cells = (0..35);
 };
 
 ~new_game = {
@@ -25,16 +24,12 @@
 
 // SIMULATION
 (
-var repeat, player, opponent, tactic, point, game_value, cell;
+var repeat, player, opponent, tactic, point, game_value;
 
 /*
-Get maximum values, without lookahead.
-X's win rate is 1.0.
-After 10000 trials, the following combinations of tactics are never used.
-X first:
-[ [ 0, 1 ], [ 1, 0 ], [ 2, 1 ], [ 4, 0 ], [ 4, 2 ], [ 4, 3 ], [ 5, 0 ], [ 5, 1 ], [ 5, 3 ], [ 5, 4 ] ]
-Y first:
-[ [ 0, 1 ], [ 1, 0 ], [ 2, 1 ], [ 4, 0 ], [ 4, 1 ], [ 4, 2 ], [ 4, 3 ], [ 4, 4 ], [ 4, 5 ], [ 5, 0 ], [ 5, 1 ], [ 5, 3 ], [ 5, 4 ] ]
+Random choice vs Gets maximum values
+Regardless of whether the first move is X or Y,
+A player who makes random choices has a win rate almost of 0.0.
 */
 
 player = 0;
@@ -47,11 +42,15 @@ repeat.do{
 	50.do{|i|
 		opponent = 1 - player;
 		if(i == 0, {
-			tactic = (0..5).choose;		// random choice
+			tactic = (0..5).choose;
 		}, {
-			t = ~mat[opponent].at(~sel[opponent]);
-			t = t.collect{|e| (e == t.minItem).binaryValue}.normalizeSum;
-			tactic = (0..5).wchoose(t);
+			if(player == 0, {
+				tactic = (0..5).choose;		// random choice
+			}, {
+				t = ~mat[opponent].at(~sel[opponent]);
+				t = t.collect{|e| (e == t.minItem).binaryValue}.normalizeSum;
+				tactic = (0..5).wchoose(t);
+			});
 		});
 
 		// Add profit
@@ -63,12 +62,7 @@ repeat.do{
 		~sel[player] = tactic;
 		~total_move = ~total_move + 1;
 		player = 1 - player;
-
-		if(i > 0, {
-			cell = ~sel[0]*6 + ~sel[1];
-			~unused_cells.remove(cell);
-			// ~sel.post; cell.post; ~sco.postln;
-		});
+		// ~sel.post; ~sco.postln;
 	};
 
 	game_value = ~total_move * 0.07;
@@ -77,7 +71,6 @@ repeat.do{
 	if (~sco[0] > ~sco[1], { ~xwon = ~xwon + 1 });
 };
 
-~unused_cells.collect{|e| [(e/6).asInteger, e%6]}.postln;
 (~xwon/repeat);
 )
 
