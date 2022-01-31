@@ -31,9 +31,9 @@ var repeat, player, opponent, tactic, point, game_value, cell;
 Get maximum values, without lookahead.
 X's win rate is 1.0.
 After 10000 trials, the following cells are never used.
-X first
+X first:
 [ [ 0, 1 ], [ 1, 0 ], [ 2, 1 ], [ 4, 0 ], [ 4, 2 ], [ 4, 3 ], [ 5, 0 ], [ 5, 1 ], [ 5, 3 ], [ 5, 4 ] ]
-Y first
+Y first:
 [ [ 0, 1 ], [ 1, 0 ], [ 2, 1 ], [ 4, 0 ], [ 4, 1 ], [ 4, 2 ], [ 4, 3 ], [ 4, 4 ], [ 4, 5 ], [ 5, 0 ], [ 5, 1 ], [ 5, 3 ], [ 5, 4 ] ]
 */
 
