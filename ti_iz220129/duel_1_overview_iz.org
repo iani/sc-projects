@@ -1,0 +1,21 @@
+#+TITLE: Duel_1_overview_iz
+
+* Terminology
+
+** Random move
+
+
+** Optimal move (optimal tactic)
+
+The
+
+** Weighted optimal move (or tactic)
+
+* duel_1 : alternating random move with optimal tactic answer
+
+Alternating random move with optimal move response.
+
+X -> random move
+Y ->
+
+The current player chooses one tactic at random. Then the opponent chooses the optimal tactic aco

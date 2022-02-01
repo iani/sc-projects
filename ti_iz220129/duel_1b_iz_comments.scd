@@ -1,3 +1,8 @@
+// COMMENT IZ:
+// Here player 0 (X), always chooses at random,
+// and player 2 (Y), alwyays chooses the optimal tactic
+// according to the matrix.
+// Thus Y always wins.
 // SETUP
 (
 ~setup = {
@@ -11,7 +16,6 @@
 	];
 	~ymat = ~xmat.flop.neg;
 	~mat = [~xmat, ~ymat];
-	~prob = [[14, 6, 6, 6, 8, 16], [19, 7, 6, 1, 7, 16]]/56;
 	~xwon = 0;
 };
 
@@ -19,6 +23,7 @@
 	~sel = [nil, nil];
 	~sco = [0, 0];
 	~total_move = 0;
+
 };
 )
 
@@ -27,10 +32,17 @@
 var repeat, player, opponent, tactic, point, game_value;
 
 /*
+Random choice vs Gets maximum values
 Regardless of whether the first move is X or Y,
-random choise:		X's win rate is about 0.69
-weighted random:	X's win rate is about 0.61
+A player who makes random choices has a win rate almost of 0.0.
+
+// COMMENT IZ:
+The above is a consequence of the fact that the
+player that always chooses the optimal strategy always has
+an advantage over the player that chooses at random.
 */
+
+//
 
 player = 0;
 repeat = 1e4;
@@ -39,10 +51,19 @@ repeat = 1e4;
 repeat.do{
 	~new_game.();
 
-	50.do{
+	50.do{|i|
 		opponent = 1 - player;
-		tactic = (0..5).choose;	// random
-		// tactic = (0..5).wchoose(~prob[player]);	// weighted random
+		if(i == 0, {
+			tactic = (0..5).choose;
+		}, {
+			if(player == 0, {
+				tactic = (0..5).choose;		// random choice
+			}, {
+				t = ~mat[opponent].at(~sel[opponent]);
+				t = t.collect{|e| (e == t.minItem).binaryValue}.normalizeSum;
+				tactic = (0..5).wchoose(t);
+			});
+		});
 
 		// Add profit
 		~sel[opponent] !? {
@@ -51,9 +72,9 @@ repeat.do{
 		};
 
 		~sel[player] = tactic;
-		// ~sel.post; ~sco.postln;
 		~total_move = ~total_move + 1;
 		player = 1 - player;
+		// ~sel.post; ~sco.postln;
 	};
 
 	game_value = ~total_move * 0.07;
@@ -64,3 +85,6 @@ repeat.do{
 
 (~xwon/repeat);
 )
+
+
+
