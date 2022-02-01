@@ -4,10 +4,15 @@
 
 ** Random move
 
+The player chooses at random from one of the 6 tactics with equal probability:
+
+#+begin_src sclang
+tactics[player] = tactic = (0..5).choose;
+#+end_src
 
 ** Optimal move (optimal tactic)
 
-The
+The player chooses the tactic which has the greatest chances for success based on the tactic chosen by the opponent and the values of the matrix of the game matrix.
 
 ** Weighted optimal move (or tactic)
 

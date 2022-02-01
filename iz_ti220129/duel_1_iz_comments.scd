@@ -69,14 +69,14 @@ repeat do: {
 			point = ~mat[player][tactic].at(~sel[opponent]); //
 			// add the point to the player's score.
 			~sco[player] = ~sco[player] + point;
-		};
 
-		~sel[player] = tactic; // store the player's tactic for next time.
-		// ~sel.post; ~sco.postln;
-		~total_move = ~total_move + 1; // count the number of moves
-		player = 1 - player; // switch to the other player for next time.
-		opponent = 1 - player; // set the opponent of the current player
-	};
+			// Since
+			~sel[player] = tactic; // store the player's tactic for next time.
+			// ~sel.post; ~sco.postln;
+			~total_move = ~total_move + 1; // count the number of moves
+			player = 1 - player; // switch to the other player for next time.
+			opponent = 1 - player; // set the opponent of the current player
+		};
 
 	// adjust score value according to Formalized Music p. 121
 	game_value = ~total_move * 0.07;
