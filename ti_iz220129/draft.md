@@ -31,6 +31,7 @@ According to Duel's performance notes, the game will be terminated in the follow
 - When a certain number of tactics have been executed
 - When one of the players reaches a predetermined score
 - When the time limit is reached
+
 However, the actual end condition is optional and can be continued indefinitely.
 Therefore, Duel can be defined as an Infinite sequential game in game theory terms.
 
@@ -206,7 +207,7 @@ For example, Masahiro Miwa's "Matari-sama" for eight performers can be interpret
 
 The performers sit in a circle and place their hands on the shoulders of the performer to their right.
 The performers hold castanets in their left hands and bells in their right.
-A performer then plays one of the instruments on the shoulder of the performer next to him.
+A performer then plays one of the instruments on the shoulder of the performer next to them.
 
 <!--
 パフォーマーたちは円を描くように座り、右隣のパフォーマーの両肩に両手を乗せる。
@@ -215,8 +216,8 @@ A performer then plays one of the instruments on the shoulder of the performer n
 -->
 
 The simplified rules of performance are as follows:
-- If the person behind you plays the bell, you play the instrument you played last again.
-- If the person behind you plays castanets, you play the instrument opposite to the one you played last.
+- If the performer behind you plays the bell, you play the instrument you played last again.
+- If the performer behind you plays castanets, you play the instrument opposite to the one you played last.
 
 <!--
 簡略化した演奏のルールは次の通り:
