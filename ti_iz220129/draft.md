@@ -164,7 +164,7 @@ As a result, Y may lose up to 2 no matter which tactic Y chooses.
 -->
 
 As described above, to know the best solution, it is necessary to describe and analyze the situations that diverge with each decision in the form of a game tree.
-But here, let's check out the P&L possibilities (red numbers) created by the player's strategy and the strategy of his immediate opponent.
+But here, let's check out the P&L possibilities (red numbers) created by the player's strategy and the strategy of their immediate opponent.
 Again, the loss for X is a negative number, and the loss for Y is a positive number.
 Then we know that both profit and loss can occur for X, but only loss or zero for Y.
 The above predicts that this game is disadvantageous for Y.
