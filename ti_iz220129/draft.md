@@ -205,7 +205,7 @@ Also, a simple process like a logistic map can be replaced by human behavior.
 For example, Masahiro Miwa's "Matari-sama" for eight performers (2002) can be interpreted as a human execution of the Lagged Fibonacci method for generating pseudo-random numbers.
 The Lagged Fibonacci method can be expressed by the following equation.
 
-X[0] = X[-j] + X[-k] (mod m)
+X[n] = X[n-j] + X[n-k] (mod m)
 
 <!--
 また、logistic mapのようなシンプルなプロセスは、人間の動作で置き換えることができる。
@@ -236,7 +236,7 @@ The simplified rules of performance are as follows:
 This rule can be expressed as a calculation, which is an XOR operation or the addition with mod 2.
 Also this rule can be expressed by the following equation.
 
-X[0] = X[-1] + X[-8] (mod 2)
+X[n] = X[n-1] + X[n-8] (mod 2)
 
 Suppose the initial values of the eight bits are [0, 1, 1, 1, 1, 1, 1, 1, 1, 1].
 In this case, the performers first play the initial values in sequence, and then the second cycle is [1, 0, 1, 0, 1, 0, 0, 1, 0].
