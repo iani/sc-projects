@@ -12,7 +12,6 @@
 	~ymat = ~xmat.flop.neg;
 	~mat = [~xmat, ~ymat];
 	~prob = [[14, 6, 6, 6, 8, 16], [19, 7, 6, 1, 7, 16]]/56;
-	~xwon = 0;
 	~unused_cells = (0..35);
 };
 )
@@ -20,14 +19,16 @@
 // SIMULATION
 (
 // Data
-var numRepeats, numMoves, prevTactics, scores, player, opponent, tactic, profit, cells;
+var numRepeats, numMoves, prevTactics, scores, player, opponent, tactic, profit, cells, xWon, advantage;
 // Fuctions
 var newGame, getTactic, calcProfit, switchPlayers, addCell, removeCell;
 
 player = 0;
 opponent = 1 - player;
-numRepeats = 1;
-numMoves = 500;
+numRepeats = 10000;
+numMoves = 40;
+xWon = 0;
+advantage = [1.65, 1.77][player];	// numMoves = 40
 ~setup.();
 
 getTactic = {|move|
@@ -45,7 +46,7 @@ getTactic = {|move|
 	};
 	oddment = xPL.collect{|e| (e == xPL.maxItem).binaryValue};
 	if((move > 1) && (oddment.sum > 1), {
-		oddment[prevTactics[player]] = 0;
+		oddment[prevTactics[player]] = 0;	// Avoid repetition of the same tactic
 	});
 	oddment = oddment.normalizeSum;
 	tactic = (0..5).wchoose(oddment);
@@ -54,7 +55,7 @@ getTactic = {|move|
 calcProfit = {
 	prevTactics[opponent] !? {
 		profit = ~mat[player][tactic].at(prevTactics[opponent]);
-		if(player == 1, { profit = profit * 2.055 });
+		if(player == 1, { profit = profit * advantage });
 		scores[player] = scores[player] + profit;
 	};
 };
@@ -94,15 +95,15 @@ numRepeats.do{
 	};
 
 	// Counting wins of X
-	if(scores[0] > scores[1], { ~xwon = ~xwon + 1 });
+	if(scores[0] > scores[1], { xWon = xWon + 1 });
 };
 
 // Show unused cells
 ~unused_cells.collect{|e| [(e/6).asInteger, e%6]}.postln;
 
 // Show cell indexes of last game
-cells.do{|e| e.postln};
+// cells.do{|e| e.postln};
 
 // Return win rate of X
-(~xwon/numRepeats);
+(xWon/numRepeats);
 )
