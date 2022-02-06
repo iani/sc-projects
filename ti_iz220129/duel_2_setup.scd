@@ -24,6 +24,25 @@
 	(0..5).wchoose(oddment);
 };
 
+~getMaxval = {|move|
+	var xpl, xProfit, oddment;
+
+	xpl = ~mat[~player].collect{|e|				// Expected profit and loss
+		if(move > 0, {
+			xProfit = e.at(~prevTactics[~opponent]);	// Player's own gain for this move
+		}, {
+			xProfit = 0;						// Because ~prevTactics[~opponent] == nil
+		});
+		xProfit;
+	};
+	oddment = xpl.collect{|e| (e == xpl.maxItem).binaryValue};
+	if((move > 1) && (oddment.sum > 1), {
+		oddment[~prevTactics[~player]] = 0;		// Avoid repetition of the same tactic
+	});
+	oddment = oddment.normalizeSum;
+	(0..5).wchoose(oddment);
+};
+
 
 // ===== FUNCTIONS =====
 
@@ -46,7 +65,7 @@
 ~calcProfit = {|tactic|
 	~prevTactics[~opponent] !? {
 		var profit = ~mat[~player][tactic].at(~prevTactics[~opponent]);
-		if(~player == 1, { profit = profit * ~advantage });
+		if(~player == 1, { profit = profit * ~advantageY });
 		~scores[~player] = ~scores[~player] + profit;
 	};
 };
