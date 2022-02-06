@@ -246,10 +246,10 @@ Also this rule can be expressed by the following equation.
 
 X[n] = X[n-1] + X[n-8] (mod 2)
 
-Suppose the initial values of the eight bits are [0, 1, 1, 1, 1, 1, 1, 1, 1, 1].
-In this case, the performers first play the initial values in sequence, and then the second cycle is [1, 0, 1, 0, 1, 0, 0, 1, 0].
+Suppose the initial values of the eight bits are [0, 1, 1, 1, 1, 1, 1, 1].
+In this case, the performers first play the initial values in sequence, and then the second cycle is [1, 0, 1, 0, 1, 0, 1, 0].
 And the third cycle is [1, 1, 0, 0, 1, 1, 0, 0].
-After different bit sequences until the 63rd cycle, they finally return to the initial value [0, 1, 1, 1, 1, 1, 1, 1, 1, 1] in the 64th cycle.
+After different bit sequences until the 63rd cycle, they finally return to the initial value [0, 1, 1, 1, 1, 1, 1, 1] in the 64th cycle.
 Of course, if someone makes a mistake along the way, the result will be unpredictable.
 Matari-sama is an example of the human-powered generation of a large structure from minimal rules.
 
