@@ -185,11 +185,19 @@ The above predicts that this game is disadvantageous for Y.
 
 --
 
+Xenakis' works are written by hand or by machine calculations.
+Duel may have been an attempt to have the two conductors perform the calculations that form the basis of the music's progression.
+
+<!--
+クセナキスの作品は、手計算や機械による計算によって書かれている。
+Duelは、音楽の進行の根拠となる計算それ自体を、2人の指揮者に行なわせる試みだったのではないか。
+-->
+
 Feedback loops are a source of chaos.
 A logistic map is one example.
 The logistic map uses the previous value x to calculate ax(1-x), and the result is the next value, x'.
 Then repeat this (0 ≤ a ≤ 4).
-In the Duel metaphor, the tactics of both sides become arguments, and the payoff matrix becomes a function to determine the next state.
+In Duel, the tactics of both sides become arguments, and the payoff matrix becomes a function to determine the next state.
 Then repeat this.
 
 <!--
@@ -197,7 +205,7 @@ Then repeat this.
 logistic mapはその一例である。
 logistic mapは直前の値xを使ってax(1-x)を計算し、その結果を次の値x'とする。
 そしてこれを繰り返す(0 ≤ a ≤ 4)。
-Duelに喩えると、双方の戦術が引数となり、payoff matrixが関数となって、次の状態を決定する。
+Duelでは、双方の戦術が引数となり、payoff matrixが関数となって、次の状態を決定する。
 そしてこれを繰り返す。
 -->
 
@@ -255,10 +263,37 @@ Matari-sama is an example of the human-powered generation of a large structure f
 「またりさま」は、人力によって、最小のルールから大きな構造を生成する一つの例だ。
 -->
 
-Xenakis' works are written by hand or by machine calculations.
-Duel may have been an attempt to have the two conductors perform the calculations that form the basis of the music's progression.
+The payoff matrix provides the musical structure or the linking of sounds of Duel.
+Duel's payoff matrix was created through various processes, starting with Xenakis' subjective evaluation of sound combinations.
+So does the use of payoff matrices fulfill Xenakis' acoustic preferences?
 
 <!--
-クセナキスの作品は、手計算や機械による計算によって書かれている。
-Duelは、音楽の進行の根拠となる計算それ自体を、2人の指揮者に行なわせる試みだったのではないか。
+Duelの音楽的構造、すなわちサウンドの連結はpayoff matrixによってもたらされる。
+Duelのpayoff matrixは、クセナキスの主観に基づくサウンドの組み合わせの評価からスタートし、様々な過程を経て作成された。
+それでは、payoff matrixの使用によって、クセナキスの音響的嗜好は本当に実現するだろうか？
 -->
+
+The following table shows Xenakis' final matrix (M8) in color.
+Overwrite the number of times each strategy has used each cell to this table.
+In this way, we can compare Xenakis' intentions with the simulation results.
+
+<!--
+以下の表は最終的にクセナキスが掲げた行列(M8)を色付けしたものだ。
+それぞれの戦略によって、各セルが使用された回数を、この表に上書きする。
+この方法で、クセナキスの意図とシミュレーション結果の比較を行なう。
+1ゲームを50ムーブとし、10000ゲームのシミュレーションを行なった。
+-->
+
+The second table shows the results of running weighted random selection according to the ratio of the mixed strategy.
+By the way, Xenakis wrote that this method would "degenerate" the competitive situations (p. 126).
+The third table shows the results of running the minimax strategy.
+In both cases, X is the first attack, but the value does not change significantly if Y is the first attack.
+
+<!--
+第2の表は、クセナキスによる混合戦略の比率に従って、Weighted Random Selectionを実行した結果である。
+ところでクセナキスは、この方法は競争をdegenerateさせると書いた。
+第3の表は、minimax strategyを実行した結果である。
+どちらの場合もXが先攻ですが、Yが先攻でも値は大きく変わりません。
+-->
+
+![Number of times each cell was used](count.png)

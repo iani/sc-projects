@@ -68,8 +68,9 @@
 };
 
 ~countCells = {
-	var freq = (0..35).collect{|e| ~cells.count{|c| c == e }};
-	freq.do{|e| e.postln};
+	var freq = Array.fill2D(6, 6, {|row, col| row*6+col});
+	freq = freq.collect{|f| f.collect{|e| ~cells.count{|c| c == e }}};
+	freq.do{|f| f.do{|e| (e+"\t").post}; "".postln };
 };
 
 ~applyGamevalue = {|gameValue, numMoves|

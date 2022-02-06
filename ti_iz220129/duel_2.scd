@@ -13,12 +13,12 @@ var getTactic;
 ~player = 0;
 ~opponent = 1 - ~player;
 
-numRepeats = 100;
+numRepeats = 1000;
 numMoves = 50;
 
 // Strategy selection
-getTactic = ~miniMax; ~advantage = [1.65, 1.77][~player];
 // getTactic = ~weightedRandom; ~advantage = 1;
+getTactic = ~miniMax; ~advantage = [1.65, 1.77][~player];
 
 numRepeats.do{
 	~prevTactics = [nil, nil];
