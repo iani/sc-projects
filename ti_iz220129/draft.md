@@ -285,14 +285,14 @@ In this way, we can compare Xenakis' intentions with the simulation results.
 -->
 
 The second table shows the results of running weighted random selection according to the ratio of the mixed strategy.
-By the way, Xenakis wrote that this method would "degenerate" the competitive situations (p. 126).
 The third table shows the results of running the minimax strategy.
-In both cases, X is the first attack, but the value does not change significantly if Y is the first attack.
+By the way, Xenakis wrote that the former method would "degenerate" the competitive situations (p. 126).
+In both cases, X is the first attack, but the values do not change significantly if Y is the first attack.
 
 <!--
 第2の表は、クセナキスによる混合戦略の比率に従って、Weighted Random Selectionを実行した結果である。
-ところでクセナキスは、この方法は競争をdegenerateさせると書いた。
 第3の表は、minimax strategyを実行した結果である。
+ところでクセナキスは、前者の方法は競争をdegenerateさせると書いた。
 どちらの場合もXが先攻ですが、Yが先攻でも値は大きく変わりません。
 -->
 
