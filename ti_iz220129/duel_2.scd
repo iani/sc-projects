@@ -13,12 +13,13 @@ var getTactic;
 ~player = 0;
 ~opponent = 1 - ~player;
 
-numRepeats = 1000;
+numRepeats = 1;
 numMoves = 50;
 
 // Strategy selection
 // getTactic = ~weightedRandom; ~advantage = 1;
-getTactic = ~miniMax; ~advantage = [1.65, 1.77][~player];
+getTactic = ~miniMax;
+~advantage = [1.65, 1.77][~player];
 
 numRepeats.do{
 	~prevTactics = [nil, nil];
@@ -32,7 +33,7 @@ numRepeats.do{
 		~addCell.(move);
 
 		// Display the move and the score
-		// ~prevTactics.post; ~scores.postln;
+		~prevTactics.post; ~scores.postln;
 	};
 
 	// ~applyGamevalue.(0.07, numMoves);	// When getTactic = ~weightedRandom

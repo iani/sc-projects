@@ -43,7 +43,7 @@ opponent = 1;
 #+end_src
 
 Here is a simulation showing the turns of X and Y for 10 moves:
-#+begin_center sclang
+#+begin_src sclang
 var player, opponent;
 // initialize player and opponent for a game where X plays first:
 player = 0;
@@ -56,7 +56,7 @@ opponent = 1;
     postf("player: %, opponent: %\n", player, opponent);
     ~switchPlayers.value;
 };
-#+end_center
+#+end_src
 
 ** tactics
 
