@@ -1,3 +1,3 @@
 // { "This is project startup".postln; } ! 10;
-OscGroups.gui;
+// OscGroups.gui;
 Project.gui;
