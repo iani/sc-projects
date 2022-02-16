@@ -5,7 +5,7 @@ Pdef(\metal, Pbind(\instrument, \metaloph,
 	\release, 32,//Prand([16, 32, 64, 128, 256, 512], inf),
 	\a, 0.5,
 	\beatDiv, 4,
-	\amp, 1,
+	\amp, 2,
 	\rate, Prand([-2, 2], inf),// * Pseq([1, 3/2, 9/8, 6/5, 11/10, 10/9], inf),
 	\fFreq, Pseq([300, 1000, 500, 700], inf)
 )).play(quant: ~quant);
