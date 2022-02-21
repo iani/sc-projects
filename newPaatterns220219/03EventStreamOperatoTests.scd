@@ -10,6 +10,9 @@
 (dur: 0.15) ++> \test;
 //:
 (dur: 0.1) ++> \test;
+(dur: 1) ++> \test;
 //:
+\test.start;
 //:
 e respondsTo: \addEvent;
+~test.start;

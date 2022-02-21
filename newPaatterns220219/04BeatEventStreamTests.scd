@@ -13,33 +13,45 @@
 
 ~test.addNotifier(\x.beat, \beat, ~test);
 //:
-() @> \test;
 //:
 \test.startBeat;
-\tesdur: 0.05t.stopBeat;
-\test.beat.dependdur: 0.05ants;
-, [-2, 0, 4]//:
-\test removeBeatdur: 0.05: \x;
-, [-2, 0, 4]//:
-() addBeatdur: 0.05: \x;
-, [-2, 0, 4]//:
-\x.startdur: 0.05Beat;
-, [-2, 0, 4]//:
-\x removeBeatdur: 0.05: \x;
-, [-2, 0, 4]//:
-() @>.testbeadur: 0.05t \y;
-, [-2, 0, 4]//:
-\testbeat.stadur: 0.05rtBeat;
-, [-2, 0, 4]
 //:
-(dur: 0.05) @>.testbeat \y;
+() +>! \test;
 //:
-\testbeat.startBeat;
+~test addBeat: \test;
 //:
-(degree: [1, 0, [2, 3], [-2, 0, 4]].pseq) ++> \y;
+~test.getNextEvent;
 //:
-~y.beatFilter = { | c | [1, 2, 3, 5, 9] includes: (c%10)  };
+~test.getNextEvent.play;
 //:
-\testbeat.beat.dt = 0.25;
+() +> \test;
 //:
-\testbeat.stopBeat;
+\x addDependant: ~test;
+//:
+\x changed: \beat;
+//:
+~test;
+//:
+\test.beat addDependant: ~test;
+//:
+\test.beat changed: \beat;
+//:
+//:
+
+//:
+() @> \test;
+
+() +>! \test;
+~test.addBeat(\test2);
+\test2.startBeat;
+~test.removeBeat(\test2);
+\test2.stopBeat;
+\test.beat.dependants;
+\test.beat.dependants.asArray.first.inspect;
+\test.beat.trace;
+Notification.notifications;
+
+\x.addNotifier(\test.beat, \beat, { "testing".postln; });
+
+\x.addNotifier(\y, \beats, { "done".postln; });
+\y.changed(\beats);
