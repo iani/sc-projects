@@ -50,5 +50,16 @@ b.stop;
 //: NEED TO AVOID ADDING NEW EVENTS EACH TIME
 	// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	// FIXME: debug this. Do not add new eventsstreams if same name event name
-(dur: 0.01, degree: (0..10).pseq) @> \x;
-(dur: 0.01, degree: (0..10).pseq) @>> \x;
+(dur: 0.01, degree: (0..10).pseq) @> \y;
+(dur: 0.01, degree: (0..10).pseq) @>> \y;
+
+a = (degree: (3..5).pseq) +> \test;
+a = (degree: (3..5).pseq) ++> \test;
+a = (dur: 0.1) +> \test;
+a = (dur: 0.1) ++> \test; ///// ??????
+
+//:
+a.start;
+a.stop;
+//:
+a.addEvent((degree: (3..5).pseq));
