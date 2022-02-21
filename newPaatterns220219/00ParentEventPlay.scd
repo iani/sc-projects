@@ -43,3 +43,34 @@ a.trace;
 a.untrace;
 //:
 Object respondsTo: \trace;
+//:
+() +> \test;
+//:
+(dur: 0.2) ++> \test ;
+ //:
+(degree: 3) +> \test2;
+//:
+(dur: 1) ++> \test2 ;
+ //:
+\test2.stop;
+//:
+(dur: 0.2) ++> \test ;
+ //:
+(degree: Pseq([0, 1, 2, 3, 4], inf)) ++> \test;
+//:
+(degree: [2, -1].pseq) ++> \test;
+//:
+(dur: 1) ++> \test;
+//:
+~test add: (dur: 0.2);
+//:
+(dur: 1.55) ++> \test;
+//:
+(degree: 10) ++> \test;
+//:
+{ WhiteNoise.ar(0.1) } +> \test;
+//:
+~test.isPlaying;
+~test.start;
+~test.isPlaying;
+~test.stop;
