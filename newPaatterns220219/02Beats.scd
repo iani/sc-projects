@@ -52,11 +52,17 @@ b.stop;
 	// FIXME: debug this. Do not add new eventsstreams if same name event name
 (dur: 0.01, degree: (0..10).pseq) @> \y;
 (dur: 0.01, degree: (0..10).pseq) @>> \y;
+//:
+\y.stopBeat;
+//:
+\y.startBeat;
+//:
 
-a = (degree: (3..5).pseq) +> \test;
-a = (degree: (3..5).pseq) ++> \test;
+a = (degree: (1..5).pseq) +> \test;
+a = (degree: (0..5).pseq) ++> \test;
 a = (dur: 0.1) +> \test;
 a = (dur: 0.1) ++> \test; ///// ??????
+a = (dur: 1) ++> \test; ///// ??????
 
 //:
 a.start;
