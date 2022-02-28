@@ -1,3 +1,13 @@
+/* 28 Feb 2022 18:55
+Values from gd script:
+
+~clk 500 i 1 ~len 1 ~ascend 1 ~linear 1
+~clk 500 i 3 ~len 1 ~ascend 1 ~linear 1
+~clk 500 i 5 ~len 1 ~ascend 1 ~linear 1
+~clk 500 i 7 ~len 1 ~ascend 1 ~linear 1
+
+*/
+
 GenerateSequences {
 	var <>data;
 	var <osc;
