@@ -24,7 +24,6 @@ SynthDef(\generator2lin, { | clk, step, len, start_pos, end_pos, linearity |
 			Stepper.kr(Impulse.kr(env), step: step), Impulse.kr(clk)
 		)
 	);
-	//SendReply.kr(notifier, '/analysis', values: [latch, env/clk], replyID: [9900,9901]);
 	SendReply.kr(notifier, '/analysis', values: [latch, env/clk]);
 	K2A.ar(latch);
 }).add;
