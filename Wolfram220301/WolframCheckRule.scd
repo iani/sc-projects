@@ -8,6 +8,94 @@ w.listStates;
 w.states do: _.postln;
 a = w.run1Step;
 //:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(54, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(60, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(62, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(122, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(220, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(150, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(222, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(250, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(169, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(500);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(153, "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+w.makeStates(500);
+w.listStates;
+//:
+/*  2 Mar 2022 15:15
+Check implementation in Wolfram class.
+*/
+
+w = Wolfram(90, "0000000000000000000000000000000010000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
 w = Wolfram(30, "0000000000000000000000000000000000000100000000000000000000000000000000");
 w.makeStates(50);
 w.listStates;
