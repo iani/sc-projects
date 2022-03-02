@@ -8,6 +8,16 @@ w.listStates;
 w.states do: _.postln;
 a = w.run1Step;
 //:
+w = Wolfram(30, "0000000000000000000000000000000000000100000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+w = Wolfram(30, "00000000000000000001000000000000000000100000000000000000000000000000000");
+w.makeStates(50);
+w.listStates;
+//:
+
+//:
 "".catList(w.states[0] collect: _.asString);
 //:
 w.startingState;
@@ -25,4 +35,9 @@ a = w.test1Step;
 	[t, w.triadCode(t)].postln;
 } ! 7;
 //:
-(1..5)@@(-1)
+(1..5)@@(-1);
+
+//: create states array from string
+~x = nil;
+"0101" do: { |c| ~x = ~x add: c.asString.interpret }
+~x
