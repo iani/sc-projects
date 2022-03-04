@@ -8,14 +8,18 @@ gd_lhc_220228 folder)
 */
 //:
 (
-{ Out.kr(\beat1.bus, Stepper.kr(Impulse.kr(5).kdsr)) } +> \beat1;
+{ Out.kr(\beat1.bus, Stepper.kr(Impulse.kr(1 / 0.2).kdsr)) } +> \beat1;
+)
+//:
+(
+{ Out.kr(\beat1.bus, Stepper.kr(Impulse.kr(1 / 100000000).kdsr)) } +> \beat1;
 )
 //:
 (
 { WhiteNoise.ar(
 	0.05 * Decay.kr(
 		Changed.kr(
-			In.kr(\beat1.index)
+			\beat1.busIn
 		))) } +> \test1;
 )
 //:
@@ -25,15 +29,15 @@ gd_lhc_220228 folder)
 	0,
 	0.05 * Decay.kr(
 		Changed.kr(
-			In.kr(\beat1.index)
+			\beat1.busIn
 		))) } +> \test1;
 )
 //:
 (
 { SinOsc.ar(
-	(In.kr(\beat1.index).lag(0.15) + 60).midicps,
+	(\beat1.busIn.lag(0.5) + 60).midicps,
 	0,
-	0.05 * Decay.kr(
+	0.2 * Decay.kr(
 		Changed.kr(
 			In.kr(\beat1.index)
 		))) } +> \test1;
