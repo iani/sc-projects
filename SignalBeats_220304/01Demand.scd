@@ -11,6 +11,15 @@ Use Demand Ugens to access values stored in buffers.
     SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
 
 } +> \test;
+//:Dseq - with portamento gamaka
+{
+    var a, freq, trig;
+    a = Dseq(([0, 2, 3, 6, 7, 8, 11, 12] + 80).midicps, inf);
+    trig = Impulse.kr(3);
+    freq = Lag.kr(Demand.kr(trig, 0, a), 0.5);
+    SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
+
+} +> \test;
 //:Sharpen with Decay
 {
     var a, freq, trig;
@@ -19,6 +28,37 @@ Use Demand Ugens to access values stored in buffers.
     freq = Demand.kr(trig, 0, a);
     SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
 	* trig.decay
+} +> \test;
+//:Add gamakas?
+{
+    var a, freq, trig;
+    a = Dseq(([0, 2, 3, 6, 7, 8, 11, 12] + 80).midicps, inf);
+    trig = Impulse.kr(2);
+    freq = Lag.kr(Demand.kr(trig, 0, a), 0.5);
+    SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
+	* trig.perctr(0.05, 0.7)
+} +> \test;
+//:Add varying (!?) gamakas?
+// Slide only every second note
+{
+    var a, freq, trig;
+    a = Dseq(([0, 2, 3, 6, 7, 8, 11, 12] + 80).midicps, inf);
+    trig = Impulse.kr(2);
+    freq = Lag.kr(Demand.kr(trig, 0, a),
+		Demand.kr(trig, 0, // slide every second note
+			Dseq([0.001, 1.0, 0.01, 0.35], inf)
+		));
+    SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
+	* trig.perctr(0.05, 0.7)
+} +> \test;
+//:Add gamakas?
+{
+    var a, freq, trig;
+    a = Dseq(([0, 2, 3, 6, 7, 8, 11, 12] + 80).midicps, inf);
+    trig = Impulse.kr(2);
+    freq = Lag.kr(Demand.kr(trig, 0, a), 0.5);
+    SinOsc.ar(freq * [1, 1.5, 2, 2.2]).mix.dup * 0.02
+	* trig.perctr(0.05, 0.7)
 } +> \test;
 //:Sharpen with Decay
 {
