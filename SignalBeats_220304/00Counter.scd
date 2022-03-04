@@ -8,7 +8,7 @@ gd_lhc_220228 folder)
 */
 //:
 (
-{ Out.kr(\beat1.bus, Stepper.kr(Impulse.kr(2).kdsr)) } +> \beat1;
+{ Out.kr(\beat1.bus, Stepper.kr(Impulse.kr(5).kdsr)) } +> \beat1;
 )
 //:
 (
@@ -22,6 +22,16 @@ gd_lhc_220228 folder)
 (
 { SinOsc.ar(
 	(In.kr(\beat1.index) + 60).midicps,
+	0,
+	0.05 * Decay.kr(
+		Changed.kr(
+			In.kr(\beat1.index)
+		))) } +> \test1;
+)
+//:
+(
+{ SinOsc.ar(
+	(In.kr(\beat1.index).lag(0.15) + 60).midicps,
 	0,
 	0.05 * Decay.kr(
 		Changed.kr(
