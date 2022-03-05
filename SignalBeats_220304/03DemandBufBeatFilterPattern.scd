@@ -68,5 +68,13 @@ Dbufrd buffer has 1 values.
 //: try a different beat patterns
 [1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0] @> \beats;
 ([1, 0, 0, 0, 0, 0] ++ ({ 1 } ! 10) ++ [1, 0, 1].dup(10).flat).flat @> \beats;
-([0, 0, 0, 1, 1, 0].dup(5) ++ ({ 1 } ! 10) ++ [1, 0, 1].dup(10).flat).flat @> \beats;
-//:Store the bit pattern for the rhythm:
+([0, 0, 0, 1, 1, 0].dup(5) ++ ({ 1 } ! 20) ++ [1, 0, 1].dup(10).flat).flat @> \beats;
+
+//: try the above with new shortcut method trigFilter
+{
+	var filteredbeats, freq;
+	filteredbeats = \beats.trigFilter(Impulse.kr(10));
+	freq = Demand.kr(filteredbeats, 0, Drand(16*[15, 20, 22, 23, 25, 27, 31, 32].midicps, inf));
+	SinOsc.ar(freq * [1, 1.5, 2, 2.5], 0, 0.1).mix.dup
+	* filteredbeats.perctr(0.001, 0.08)
+} +> \test;
