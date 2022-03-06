@@ -16,4 +16,4 @@ OscGroups.enable;
 //:
 OscGroups.isEnabled;
 //:
-NetAddr.localAddr.sendMsg('/code', "1000.rand");
+NetAddr.localAddr.sendMsg('/code', "Hello Mr. Ikeda".asCompileString);
