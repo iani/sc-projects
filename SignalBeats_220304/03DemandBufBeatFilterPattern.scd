@@ -63,6 +63,7 @@ Dbufrd buffer has 1 values.
 	SinOsc.ar(freq * [1, 1.5, 2, 2.5], 0, 0.1).mix.dup
 	* filteredbeats.perctr(0.001, 0.08)
 	// * Decay.kr(filteredbeats, 0.1, 0.9)
+	// so
 	//	* beatfilter;
 } +> \test;
 //: try a different beat patterns
