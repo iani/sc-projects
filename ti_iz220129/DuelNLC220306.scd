@@ -1,5 +1,5 @@
 // OSCGroups setup
-// Start OSCGroupsCliend on terminal:
+// Start OSCGroupsClient on terminal:
 /*
 OscGroupClient 139.162.184.97 22242 22246 22244 22245 <username> <userpass> checkGroup test
 */
@@ -13,3 +13,7 @@ OSC.silent;
 Project.gui;
 //:Enable OscGroups sending + receiving + evaluation:
 OscGroups.enable;
+//:
+OscGroups.isEnabled;
+//:
+NetAddr.localAddr.sendMsg('/code', "1000.rand");
