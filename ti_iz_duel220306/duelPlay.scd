@@ -9,4 +9,8 @@
 ~play.(5);	// Freeze
 
 // Pause
-~play.(6);
+~play.(6, { { SinOsc.ar(500 rrand: 5000) / 20 } +> \west2 } );
+~play.(6, { () +> \west2 } );
+~play.(6, { (degree: [0, 10, 20].pwhite) +> \west2 } );
+~play.(6, { (dur: [0.05, 0.1].prand) ++> \west2 } );
+//:

@@ -5,10 +5,11 @@
 
 ~prevTactics = [nil, nil];
 ~scores = [0, 0];
-
-~play = {|tactic|
+//:
+~play = {|tactic, func |
 	~calcProfit.(tactic);
 	~prevTactics[~player] = tactic;
 	~switchPlayers.();
 	~prevTactics.post; ~scores.postln;
+	func.value;
 };
