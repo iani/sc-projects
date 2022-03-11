@@ -23,6 +23,11 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 	// [\x4, 1, 0.47, 0.53, 4], // using sensor module 3
 	// [\y4, 2, 0.47, 0.53, 4],
 	// [\z4, 3, 0.47, 0.53, 4]
+
+// ================================================================
+// SYNTH 1: Standard Map Chaotic generator
+// const <equation="x1 = (x0 + y1) % 2pi\ny1 = (y0 + k*sin(x0)) % 2pi";
+// https://www.wikiwand.com/en/Standard_map
 //:
 {
 	var env;
@@ -56,7 +61,18 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 		)
 		, \pos.kr(0), \level.kr(0.1))
 } +> \peb1;
-//:Test setting some parameters:
+//:List of parameters:
+/*
+	=== TIMBRE ===
+1.	\srdiv sample rate divisor
+2.  \stdlfreq, StandardL frequency
+3.	\stdlbwr: StandardL bandwidth (rate?)
+4.	\resinmul: Resonance input multiplyer
+	=== LEVEL AND PAN ===
+5.	\pos: pan position
+6.	\level: pan level
+*/
+/:Test setting some parameters:
 \level <+.peb1 0.1;
 \pos <+.peb1 -1.0;
 \pos <+.peb1 0.0;
@@ -74,24 +90,15 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 \stdlfreq <+.peb1 0.9;
 \stdlfreq <+.peb1 0.003;
 \stdlfreq <+.peb1 0.01;
+\srdiv <+.peb1 0.05;
 \srdiv <+.peb1 0.003;
 \srdiv <+.peb1 0.001;
 \srdiv <+.peb1 0.0001;
 \srdiv <+.peb1 0.1;
 \srdiv <+.peb1 0.5;
 \level <+.peb1 0.1;
-//:List of parameters:
-/*
-	\srdiv sample rate divisor
-    \stdlfreq, StandardL frequency
-	\stdlbwr: StandardL bandwidth (rate?)
-	\resinmul: Resonance input multiplyer
-	\pos: pan position
-	\level: pan level
-*/
 //:change + map some param values
 //:change srdiv
-\srdiv <+.peb1 0.05;
 //:map srdiv
 \peb1.map(\srdiv, \x1);
 //:test changing sdlfreq
@@ -114,6 +121,10 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 \peb1.map(\stdlfreq, \y1);
 \peb1.map(\stdlfreq, \z1);
 \peb1.map(\resinmul, \x2);
+
+
+// ===============================================================
+// InFeedback with Latch + WhiteNoise
 //:================ PEB
 //: PEB ORIGINAL CODE
 { | bus = 50 |
@@ -153,6 +164,54 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 		osc = SinOsc.ar(SinOsc.ar(fq*5/3,0,env**2*10000,fq),0,LPF.ar(env,100));
 		Out.ar(0, \amp.kr(1)*Pan2.ar(osc, Latch.ar(WhiteNoise.ar(1),fb),0.05))})
 } +> \peb;
+//: Parameters:
+/*
+	\fadd
+	\ldiv
+	\noise
+	\noisep
+	\amp
+
+
+*/
+//: PEB + noise param + fq controls
+{ | bus = 50 |
+	Mix.fill(8, {
+		var fb, env, fq, osc;
+		fb = (LFSaw.ar(
+			Latch.ar(
+				WhiteNoise.ar(0.5).abs
+				+ 0.5,
+				InFeedback.ar(bus,1)),1)
+			+ (\fadd.kr(0.05) * 10 + 0.1 ) //  add * 5 ???
+		) / (\ldiv.kr(0.5) * 2 + 0.3);
+		Out.ar(bus, fb);
+		env = 1-fb;
+		fq = Latch.ar(WhiteNoise.ar(
+			\noise.kr(0.5) * 10000 + 10)
+			+ (\noisep.kr(0.6) + 10000 + 10), fb);
+		osc = SinOsc.ar(SinOsc.ar(
+			fq * /* 5/3,  */
+			(\fqmul.kr(0.5) * 10 + 5/3),
+			0,
+			env ** 2
+			* /* 10000 */
+			(\oscamp.kr(0.5) * 10000 + 10),
+			fq),0,LPF.ar(env,100));
+		Out.ar(0, \amp.kr(1)*Pan2.ar(osc, Latch.ar(WhiteNoise.ar(1),fb),0.05))})
+} +> \peb;
+//: CONTROL PARAMETERS:
+/*
+	====== TIMBRE ======
+1.	\fadd (0.05)
+2.	\ldiv (0.5)
+3.	\noise (0.5)
+4.	\noisep (0.6)
+5.	\fqmul (0.5)
+6.	\oscamp (0.6)
+	===== AMPLITUDE =====
+7.	\amp (1)
+*/
 //: PEB with more sensitivity for Jun
 { | bus = 50 |
 	Mix.fill(8, {
