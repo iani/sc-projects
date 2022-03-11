@@ -54,10 +54,32 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 			// * (\resinmul.kr(0.1) + 50000 + 500)
 			* (\resinmul.kr(0.1) * 50000 + 500)
 		)
-		, \pos.kr(0), \level.kr(0.01))
+		, \pos.kr(0), \level.kr(0.1))
 } +> \peb1;
-//:Test setting a parameter:
-\peb1.set(\level, 0.1);
+//:Test setting some parameters:
+\level <+.peb1 0.1;
+\pos <+.peb1 -1.0;
+\pos <+.peb1 0.0;
+\resinmul <+.peb1 0.5;
+\resinmul <+.peb1 0.05;
+\stdlbwr <+.peb1 0.005;
+\stdlbwr <+.peb1 0.05;
+\stdlbwr <+.peb1 0.1;
+\stdlbwr <+.peb1 0.2;
+\stdlbwr <+.peb1 0.3;
+\stdlbwr <+.peb1 0.4;
+\stdlbwr <+.peb1 0.5;
+\stdlfreq <+.peb1 0.3;
+\stdlfreq <+.peb1 0.4;
+\stdlfreq <+.peb1 0.9;
+\stdlfreq <+.peb1 0.003;
+\stdlfreq <+.peb1 0.01;
+\srdiv <+.peb1 0.003;
+\srdiv <+.peb1 0.001;
+\srdiv <+.peb1 0.0001;
+\srdiv <+.peb1 0.1;
+\srdiv <+.peb1 0.5;
+\level <+.peb1 0.1;
 //:List of parameters:
 /*
 	\srdiv sample rate divisor
