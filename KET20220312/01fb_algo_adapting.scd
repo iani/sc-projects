@@ -203,7 +203,7 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 //: CONTROL PARAMETERS:
 /*
 	====== TIMBRE ======
-1.	\fadd (0.05)
+1.	\fadd (0.5)
 2.	\ldiv (0.5)
 3.	\noise (0.5)
 4.	\noisep (0.6)
@@ -221,7 +221,7 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 				WhiteNoise.ar(0.5).abs
 				+ 0.5,
 				InFeedback.ar(bus,1)),1)
-			+ (\fadd.kr(0.05) * 5 + 0.1 ) //  add * 5 ???
+			+ (\fadd.kr(0.5) * 5 + 0.1 ) //  add * 5 ???
 		) / (\ldiv.kr(0.5) * 1.0 + 1.3);
 		Out.ar(bus, fb);
 		env = 1-fb;
@@ -262,11 +262,12 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 \noise <+.peb 0.5;
 \noise <+.peb 0.01;
 \noise <+.peb 0.99;
+\noisep <+.peb 0.5;
 \noisep <+.peb 10.9;
 \noisep <+.peb 0.01;
-\noisep <+.peb 0.99;
+\noisep <+.peb -100.99;
 \fadd <+.peb 0.0; // 0.1 - 5
-\fadd <+.peb 0.; // 0.1 - 5
+\fadd <+.peb 0.1; // 0.1 - 5
 \ldiv <+.peb 0.9; // 0.3 - 10
 \ldiv <+.peb 0.99; // 0.3 - 10
 
@@ -286,3 +287,5 @@ Meaning: Map from input range 0.47-0.53 to outpu range 0.0-1.0
 Server.default.record;
 
 Server.default.stopRecording;
+
+0.52.linlin(0.47, 0.53, -100.0, 100.0);

@@ -26,3 +26,15 @@ SenseData('minibee/data').verbose;
 SenseData('minibee/data').silent;
 //:
 SenseData('minibee/data').inspect ;
+//:
+\x1.bus.get;
+//:
+Library.at(Bus, nil.asTarget.server);
+//:
+SenseData().verbose;
+//:
+SenseData().silent;
+//:
+SenseData().setxyz(1);
+//:
+SenseData.scope;
