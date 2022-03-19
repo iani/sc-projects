@@ -205,7 +205,6 @@ SenseData().post(1);
 				Lag.kr(In.kr(\x4.bus.index).linlin(0.47, 0.53, 0.01, 1.0),
 					0.5
 				)
-
 				+ 10000 + 10), fb);
 		osc = SinOsc.ar(SinOsc.ar(fq*5/3,0,env**2*10000,fq),0,LPF.ar(env,100));
 		Out.ar(0, \amp.kr(1)*Pan2.ar(osc, Latch.ar(WhiteNoise.ar(1),fb),0.05))})
