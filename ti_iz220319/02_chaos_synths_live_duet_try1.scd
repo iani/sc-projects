@@ -46,6 +46,21 @@ SynthDef(\aaa, { | bus = 50 |
 	Out.ar(0, src.adsr);
 }).add; // +> \peb;
 )
+//:
+//:
+\aaa +> \peb;
+//:
+(
+\fadd <+.peb 0.00091;
+\ldiv <+.peb 0.01;
+\noise <+.peb 0.01;
+\noisep <+.peb 0.01;
+\fqmul <+.peb 0.01;
+\oscamp <+.peb 0.01;
+
+)
+
+
 //: 2. StandardL algorithm.
 //:peb1 with controls added
 {
@@ -70,7 +85,34 @@ SynthDef(\aaa, { | bus = 50 |
 //:
 \level <+.peb1 0.1;
 \pos <+.peb1 -0.5;
-\srdiv <+.peb1 0.7;
-\stdlfreq <+.peb1 1.2;
-\stdlbwr <+.peb1 0.002;
-\resinmul <+.peb1 0.9;
+\srdiv <+.peb1 0.00097;
+\stdlfreq <+.peb1 0.015;
+\stdlbwr <+.peb1 0.0019;
+\resinmul <+.peb1 0.109;
+//:
+\peb1.stop(10);
+//:peb1 refactor: simplify adsr envelope
+{
+	Pan2.ar(
+		SinOsc.ar(
+			Resonz.ar(
+				StandardL.ar(
+					SampleRate.ir/
+					(\srdiv.kr(0.5) * 100 + 10)
+					, 1),
+				(\stdlfreq.kr(0.2) * 5000 + 10),
+				\stdlbwr.kr(0.01) * 100 + 0.01)
+			// * (\resinmul.kr(0.1) + 50000 + 500)
+			* (\resinmul.kr(0.1) * 50000 + 500)
+		)
+		, \pos.kr(0), \level.kr(0.01)).adsr
+	* \amp.kr(1)
+} +> \peb1;
+
+/*
+10001010011001
+01100101000101
+
+Mul
+
+*/
