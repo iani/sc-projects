@@ -1,7 +1,7 @@
 
 (
 // Data
-var numRepeats, numMoves, tactic;
+var numRepeats, numMoves, tactic, winRateX;
 
 // Fuctions
 var getTactic;
@@ -13,13 +13,13 @@ var getTactic;
 ~player = 0;
 ~opponent = 1 - ~player;
 
-numRepeats = 1;
+numRepeats = 1000;
 numMoves = 50;
 
 // Strategy selection
-// getTactic = ~weightedRandom; ~advantage = 1;
-getTactic = ~miniMax;
-~advantage = [1.65, 1.77][~player];
+// getTactic = ~weightedRandom; ~advantageY = 1;
+// getTactic = ~getMaxval; ~advantageY = [1.46, 1.56][~player];
+getTactic = ~miniMax; ~advantageY = [1.66, 1.78][~player];
 
 numRepeats.do{
 	~prevTactics = [nil, nil];
@@ -33,16 +33,18 @@ numRepeats.do{
 		~addCell.(move);
 
 		// Display the move and the score
-		~prevTactics.post; ~scores.postln;
+		// ~prevTactics.post; ~scores.postln;
 	};
 
-	// ~applyGamevalue.(0.07, numMoves);	// When getTactic = ~weightedRandom
+	// ~applyGamevalue.(0.05, numMoves);	// getTactic = ~weightedRandom
 	~countXwin.();
 };
 
 // Display the frequency of occurrence of cells
-~countCells.();
+// ~countCells.();
 
-// Return win rate of X
-~xWon/numRepeats;
+// Is it fair game?
+winRateX = ~xWon/numRepeats;
+winRateX.postln;
+(winRateX - 0.5).abs < 0.05;	// 45-55 %
 )
