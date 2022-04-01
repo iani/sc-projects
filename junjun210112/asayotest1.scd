@@ -17,7 +17,7 @@
 		Lag.kr(LinLin.kr(\asayoLz.in, 0.0, 1.0, 0.7, -0.7), 5.0), // pos ath1z
 		Lag.kr(LinLin.kr(\asayoRx.in, 0.48, 0.55, 0.0, 0.5), 1.0) * 1) // level ath2z
 } +> \asayo0;
-//:
+//: !!!!!!!!!!!!!!!!!! here is a first example of simple on-off switch
 { | buf = 0 |
 	var amp, src, ctl;
 	src = PinkNoise.ar(0.1);
