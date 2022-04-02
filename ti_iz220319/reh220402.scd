@@ -12,3 +12,6 @@ Project.gui;
 OSC.trace;
 
 OSC.untrace;
+
+\x1.bin.linlin
+\z1.bin.linlin
