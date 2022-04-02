@@ -56,3 +56,39 @@
 } +> \stdL;
 )
 //:
+
+
+
+// Based on A.Broz: Shepard-Risset glissando demo (2020-10-31)
+// http://sccode.org/1-5ee
+(
+// 3. Shepard tone
+{ |freq=440, amp=0.2|
+	var partialCount = 5;
+	var octRange = 2 ** (partialCount / 2);
+	var fq = -1;
+	var dur = 1 / fq.abs;
+	var dir = fq / fq.abs;
+
+	var cycle = 1 / (partialCount * dur) * dir;
+	// var width = if(direction >= 0, 1, 0);
+	var sig = partialCount.collect { |n|
+		var offset = n / partialCount;
+		var phase = (3 * pi / 2) + (2 * pi * offset);
+		var vol = SinOsc.kr(cycle, phase).range(0, 1);
+		// var ratio = VarSaw.kr(cycle, offset, width);
+		var ip = 2 * offset + 1;
+		var ratio = LFSaw.kr(cycle, ip);
+
+		ip.poll;
+
+
+		ratio = ratio.exprange(1/octRange, octRange);
+		SinOsc.ar(freq * ratio) * vol;
+	}.sum;
+	sig = sig!2 * (amp / partialCount); //* Line.kr(0, 1, 5); // fade in
+	// sig = JPverb.ar(sig); // reverb
+	 dir.poll;
+	Out.ar(0, sig);
+} +> \shep;
+)
