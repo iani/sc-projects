@@ -1,6 +1,6 @@
 Phoenix and Albatross (draft)
 
-for two dancers, two computer musicians, and a referee (-system)
+for two dancers, two computer musicians, and a referee (system)
 
 Competitors:
 Team X = a dancer and a musician
@@ -15,6 +15,8 @@ IV	-3	5	-3	-3	7	7	3
 V	-7	5	5	-7	7	7	-7
 VI	-7	5	5	-7	7	-7	-7
 0	5	-7	5	5	-7	7	-7
+
+(Attention!) The first attacker always reads the rows, the second always reads the columns.
 
 Tactics:
 I	= Repeated movement + Repeated sound
