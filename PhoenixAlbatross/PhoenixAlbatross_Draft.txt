@@ -16,7 +16,7 @@ V	-7	5	5	-7	7	7	-7
 VI	-7	5	5	-7	7	-7	-7
 0	5	-7	5	5	-7	7	-7
 
-(Attention!) The first attacker always reads the rows, the second always reads the columns.
+(Attention!) The first attacker always reads the columns, the second always reads the rows.
 
 Tactics:
 I	= Repeated movement + Repeated sound
