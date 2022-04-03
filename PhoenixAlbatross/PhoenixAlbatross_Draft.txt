@@ -1,12 +1,16 @@
-Phoenix and Albatross (draft)
+Phoenix-Albatross (draft)
 
 for two dancers, two computer musicians, and a referee (system)
 
-Competitors:
+
+# Competitors
+
 Team X = a dancer and a musician
 Team Y = a dancer and a musician
 
-Game Matrix:
+
+# Game Matrix
+
 	I	II	III	IV	V	VI	0
 I	5	-3	5	-3	7	7	3
 II	5	-5	5	5	7	-5	-5
@@ -16,9 +20,11 @@ V	-7	5	5	-7	7	7	-7
 VI	-7	5	5	-7	7	-7	-7
 0	5	-7	5	5	-7	7	-7
 
-(Attention!) The first attacker always reads the columns, the second always reads the rows.
+(Attention!) The first attacker always reads the columns, and the second always reads the rows.
 
-Tactics:
+
+# Tactics
+
 I	= Repeated movement + Repeated sound
 II	= Repeated movement + Random sound
 III	= Repeated movement + Static sound
@@ -27,24 +33,38 @@ V	= Random movement + Random sound
 VI	= Random movement + Static sound
 0	= All members pause
 
-Routing:
+
+# Routing
+
 Dancers wear sensors.
 The sensors modulate the sound of the computers.
 Musicians transmit their tactics to the referee system simultaneously they perform.
 
-Referee system:
+
+# Referee system
+
 It receives the tactics, calculates the score, and projects the score onto the screen.
 A game ends and determines the winner when the first team plays N+1 times and the second team plays N times.
 Because although both teams must score the same number of times, the first move does not produce a score.
 They will play multiple games to determine the eventual winner.
 
-How will the teams decide their strategy:
+
+# How will the teams decide their strategy?
+
+Both dancers and musicians should consider tactics based on the game matrix.
+There can be multiple methods.
+
 1. Either the dancer or the musician always decides.
-2. The dancer and the musician take turns to decide. 
+2. The dancer and the musician take turns to decide.
+
 In each case, the dancers and musicians communicate their tactics to their colleagues by hand signs or other means.
 
-Notes:
+3. The dancer and musician perform their respective moves. The musician discerns tactics from the combination of their two moves and sends it. 
+
+
+# Notes
+
 Ikeda was very interested in Laysan Albatross' courtship dance on YouTube.
-Because it looked like the behavior of finite state machines.
+Because it looked like the behavior of finite state machines (Meseth 1975).
 Ikeda considers Xenakis' "Duel," the original of this work, a humanized finite state machine with a feedback route.
 Interestingly, the same algorithm can represent the two extremely different relationships of acts of dueling and courtship.
