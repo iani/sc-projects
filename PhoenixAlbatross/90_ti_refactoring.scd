@@ -209,8 +209,12 @@ LFDNoise0
 	sig = \amp.kr(0.2).lag(1) * sig;
 	Pan2.ar(sig, \pos.kr(0)).adsr;
 } +> \stdL;
+//:
 )
+//:
+{  WhiteNoise.ar(0.1).dup } +> \test;
 
+//:
 SenseData.x(0.46, 0.53, !!!!!!! 0, 1)
 SenseData.x(0.46, 0.53, !!!!!!! -10, 55)
 
