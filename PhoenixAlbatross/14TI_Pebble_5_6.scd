@@ -1,7 +1,7 @@
 //:
 (
 // 1. InFeedback 'pebble' algorithm.
-{|bus = 52|
+{ | bus = 52 |
 	var sig;
 	sig = Mix.fill(4, {|n|
 		var ch, fb, rt, saw, env, fqm, fqa, ovt, mod, osc, pan;
@@ -33,5 +33,5 @@
 	}).adsr;
 	\amp.kr(0.05).lag(1) * sig
 	* (\z6.bin > 0.5).lag(1);		// gate
-} +> \albatross;
+} +> \phoenix;
 )

@@ -26,5 +26,5 @@
 	// sig = JPverb.ar(sig); // reverb
 	sig = amp.lag(1) * sig.adsr * (\z6.bin > 0.5).lag(0.1);
 	Out.ar(0, sig);
-} +> \albatross;
+} +> \phoenix;
 )
