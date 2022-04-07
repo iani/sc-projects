@@ -41,6 +41,56 @@ Tiny Birds
 \noisep <+.pebl -3.13; // tiny !!! little birds.
 \noisep <+.pebl -3.135; // tiny !!! little birds.
 \noisep <+.pebl -3.15; // tiny !!! little birds.
+
+// ==============================================
+//: First preliminary chosen transition
+// light bells to birds.
+// Starting at -03.01 ending at -3.15
+{
+	(-3.01, -3.02 .. -3.15) do: { | val |
+		postln("setting noisep to" + val);
+		\noisep <+.pebl val;
+		0.5.wait;
+	}
+}.fork;
+
+//:=========================================
+// WIDER REGION -2.6 - -3.15
+{
+	(-2.6, -2.61 .. -3.15) do: { | val |
+		postln("setting noisep to" + val);
+		\noisep <+.pebl val;
+		0.5.wait;
+	}
+}.fork;
+
+
+/// ==================================
+// OUTTAKES
+//: Full range bells to birds
+{
+	(-2.6, -2.61 .. -3.16) do: { | val |
+		postln("setting noisep to" + val);
+		\noisep <+.pebl val;
+		0.5.wait;
+	}
+}.fork;
+//: hint of bells to birds
+{
+	(-3.01, -3.02 .. -3.15) do: { | val |
+		postln("setting noisep to" + val);
+		\noisep <+.pebl val;
+		0.5.wait;
+	}
+}.fork;
+//: hint of bells to birds
+{
+	(-3.08, -3.09 .. -3.15) do: { | val |
+		postln("setting noisep to" + val);
+		\noisep <+.pebl val;
+		0.5.wait;
+	}
+}.fork;
 //:
 {
 	(-2.6, -2.61 .. -3.15) do: { | val |
