@@ -1,3 +1,10 @@
+/*  7 Apr 2022 10:27
+
+Basic algorithm and parameter settings with sound
+descriptions and names.
+
+*/
+
 //:
 (
 // 1. InFeedback 'pebble' algorithm.
@@ -28,9 +35,43 @@
 	\amp.kr(0.05).lag(1) * sig;
 } +> \pebl;
 )
+//: very light bells
+\noisep <+.pebl -3.0005; // light bells basic center pin
+\noisep <+.pebl -4.0005; // same as -5, firework crackerss from afar.
+// =================== TINY BIRDS
+// NOT THIS \noisep <+.pebl -3.1; // tiny !!! little birds.
+\noisep <+.pebl -3.11; // tiny !!! little birds
+\noisep <+.pebl -3.12; // tiny !!! little birds
+\noisep <+.pebl -3.125; // tiny !!! little birds.
+// ===================
+\noisep <+.pebl -2.9; // like dropping pins
+\noisep <+.pebl -2.95; // like dropping pins
+//:
+{
+
+}.fork;
 //:
 
 
+{}
+
+
+
+\noisep <+.pebl -5.0005; // dry pops. boiling water pops, fireworks from afar
+// couple with more ampliutude above:
+\amp <+.pebl 0.9;
+
+\noisep <+.pebl -5.0005; // no sound
+//:
+\noisep <+.pebl 0.4;
+\noisep <+.pebl 0.3; // lower values have not so clear difference ?
+\noisep <+.pebl 0.2;
+\noisep <+.pebl 0.1;
+\noisep <+.pebl 0.05;
+\noisep <+.pebl 0.005;
+\noisep <+.pebl 0.0005;
+\noisep <+.pebl 0.0000;
+\noisep <+.pebl -2.0005;
 
 //:
 \rtmin <+.pebl -5;
@@ -61,21 +102,9 @@
 \noisep <+.pebl 0.9;
 \noisep <+.pebl 0.99;
 
-\noisep <+.pebl 0.4;
-\noisep <+.pebl 0.3; // lower values have not so clear difference ?
-\noisep <+.pebl 0.2;
-\noisep <+.pebl 0.1;
-\noisep <+.pebl 0.05;
-\noisep <+.pebl 0.005;
-\noisep <+.pebl 0.0005;
-\noisep <+.pebl 0.0000;
-\noisep <+.pebl -3.0005; // yes
-\noisep <+.pebl -2.0005;
-\noisep <+.pebl -5.0005; // no sound
-\noisep <+.pebl -5.0005; // no sound
 
 
-ynth('temp__4' : 1004)
+Synth('temp__4' : 1004)
 Remote evaluation: /* \rtmax <+.pebl 10;
  */
 rtmax
@@ -209,8 +238,12 @@ LFDNoise0
 	sig = \amp.kr(0.2).lag(1) * sig;
 	Pan2.ar(sig, \pos.kr(0)).adsr;
 } +> \stdL;
+//:
 )
+//:
+{  WhiteNoise.ar(0.1).dup } +> \test;
 
+//:
 SenseData.x(0.46, 0.53, !!!!!!! 0, 1)
 SenseData.x(0.46, 0.53, !!!!!!! -10, 55)
 

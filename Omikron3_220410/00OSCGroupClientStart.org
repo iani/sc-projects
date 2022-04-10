@@ -1,0 +1,8 @@
+#+TITLE: 000osc Group Client Start
+
+* OscGroupClient start - server accessible without vpn
+
+OscGroupClient 172.104.250.242 22242 22246 22244 22245 <user> <userpass> withoutvpn connect
+* OscGroupClient start - server accessible WITH vpn !
+
+OscGroupClient 139.162.152.223 22242 22246 22244 22245 <user> <userpass> withvpn connect
