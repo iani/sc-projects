@@ -100,8 +100,6 @@
 	frq = \z1.bin.linlin(0.47, 0.56, 100, 8000);
 	frq = env ** 20 * frq + 50;
 	sig = SinOsc.ar(frq, 0, env);
-	a = \x2.bin.linlin(0.47, 0.56, 100, 1000);
-	// sig = SinOsc.ar(a, 0, sig);
 	sig = \amp.kr(0.2).lag(1) * sig;
 	sig = sig.adsr * (\z2.bin > 0.5).lag(0.1);
 	sig = FreeVerb2.ar(sig, sig, 0.2, 0.7);
@@ -109,6 +107,31 @@
 } +> \phoenix;
 )
 
+
+// Repeat chords
+(
+{
+	var chd, trg, env, kik, sig, rev;
+	chd = [0, 5, 7, 10] + 60;
+	trg = MouseX.kr.linexp(0, 1, 0.3, 10);
+	trg = Impulse.kr(trg);
+	env = EnvGen.ar(Env.perc(0, 1), trg) ** 4;
+	kik = env ** 4 * 200 + 50;
+	kik = SinOsc.ar(kik, 0, env) ** 0.7;
+	sig = chd.collect{|e|
+		var frq = e.midicps;
+		PMOsc.ar(frq, frq*3.5, env*2, 0, env / chd.size / 2);
+	}.sum + kik;
+	rev = MouseY.kr.linlin(0, 1, -1, 1).abs ** 2;
+	rev = Latch.kr(rev, trg).lag(0.1);
+	sig = FreeVerb2.ar(rev*sig, rev*sig, 1, 0.8, 0.3) + (1-rev*sig);
+	sig = \amp.kr(0.5).lag(1) * sig.adsr;
+	Out.ar(0, sig);
+} +> \phoenix;
+)
+
+
+// (Not Random) Arpeggio
 (
 {
 	var frq, trg, sig, res, pan;
@@ -127,36 +150,40 @@
 } +> \phoenix;
 )
 
+
+// BPF & RM Pebble
 (
 {
-	var fqa, frq, trg, sig, res, pan;
+	var fqa, frq, trg, sig, rng, pan;
 	trg = Dust.ar(10);
 	frq = LFNoise0.ar(100).abs;
 	frq = Latch.ar(frq, trg);
 	fqa = \x1.bin.linlin(0.47, 0.56, 100, 5000);
 	frq = frq * fqa*2 + fqa;
 	sig = BPF.ar(trg, frq, 0.01, 70);
-	res = \z1.bin.linlin(0.47, 0.56, 100, 10000);
-	sig = SinOsc.ar(res, 0, sig);
+	rng = \z1.bin.linlin(0.47, 0.56, 50, 10000);
+	sig = SinOsc.ar(rng, 0, sig);
 	pan = \z2.bin.linlin(0.47, 0.56, -1, 1);
 	sig = Pan2.ar(sig, pan);
 	sig = FreeVerb2.ar(sig[0], sig[1], 0.1, 0.7);
 	sig = sig.adsr * (\x2.bin > 0.5).lag(2);
-	Out.ar(0, sig);
+	Out.ar(0, sig!2);
 } +> \phoenix;
 )
 
+
+// Echo
 (
 {
 	var frq, trg, sig, res, pan;
 	frq = \x1.bin.linlin(0.47, 0.56, 12, 120);
 	frq = frq.midicps;
 	sig = SinOsc.ar(frq.lag(1), 0, 0.1);
-	res = \z1.bin.linlin(0.47, 0.56, 0.01, 0.05);
-	sig = CombN.ar(sig, 0.1, res, res*50);
+	res = \z1.bin.linlin(0.47, 0.56, 0.01, 0.1);
+	sig = CombL.ar(sig, 0.1, res, res*50);
 	pan = \z2.bin.linlin(0.47, 0.56, -1, 1);
 	sig = Pan2.ar(sig, pan);
-	sig = DelayL.ar(sig, 0.1, SinOsc.ar(20, 0, 0.001, 0.001));
+	sig = DelayL.ar(sig, 0.1, SinOsc.ar(30, 0, 0.001, 0.001));
 	sig = sig.adsr * (\x2.bin > 0.5).lag(2);
 	Out.ar(0, sig);
 } +> \phoenix;
