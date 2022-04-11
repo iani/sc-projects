@@ -29,3 +29,20 @@ Must
 \trig <+.phasor 1; // restart phasor from beginning
 //:
 { WhiteNoise.ar(0.1).dup }.play;
+
+//: adapting to range of sensestage
+
+{ var trig, rate, x, sr;
+    // rate = MouseX.kr(0.2, 2, 1);
+	// rate = \rate.kr(1);
+	rate = \z1.bin.linlin(0.46, 0.47, -1, 1);
+    trig = \trig.tr(0); // set this to restart the phasor
+    sr = SampleRate.ir;
+    x = Phasor.ar(trig, rate / sr);
+    SinOsc.ar(
+        [
+            LinLin.kr(x, 0, 1, 600, 1000), // convert range from 0..1 to 600..1000
+            1000 // constant second frequency
+        ], 0, 0.02)
+
+} +> \phasor;
