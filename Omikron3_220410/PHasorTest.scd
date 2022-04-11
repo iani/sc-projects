@@ -10,15 +10,22 @@ Must
 //: From: https://doc.sccode.org/Classes/Phasor.html
 
 { var trig, rate, x, sr;
-    rate = MouseX.kr(0.2, 2, 1);
-    trig = Impulse.ar(rate);
+    // rate = MouseX.kr(0.2, 2, 1);
+	rate = \rate.kr(1);
+    // trig = Impulse.ar(rate);
+    trig = \trig.tr(0);
     sr = SampleRate.ir;
     x = Phasor.ar(trig, rate / sr);
     SinOsc.ar(
         [
             LinLin.kr(x, 0, 1, 600, 1000), // convert range from 0..1 to 600..1000
             1000 // constant second frequency
-        ], 0, 0.2)
+        ], 0, 0.02)
 
-}.play;
+} +> \phasor;
 //:
+\rate <+.phasor 0.25; //
+\rate <+.phasor -0.25; // change directino
+\trig <+.phasor 1; // restart phasor from beginning
+//:
+{ WhiteNoise.ar(0.1).dup }.play;
