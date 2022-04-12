@@ -12,7 +12,9 @@ Tiny Birds
 		var rate, phasor, sampleRate;
 		sampleRate = SampleRate.ir;
 		rate = \z1.bin.linlin(0.46, 0.57, -0.15, 0.15).round(0.2);
-		phasor = Phasor.ar(1, rate / sampleRate).range(-2.6, -3.15);
+		phasor = Phasor.ar(1, (rate / sampleRate)
+			* (\z2.bin > 0.5) // freeze position with right hand z
+		).range(-2.6, -3.15);
 		ch = bus + n;
 		fb = InFeedback.ar(ch);
 		rt = WhiteNoise.ar.linlin(-1, 1, \rtmin.kr(0.5), \rtmax.kr(5));
@@ -52,68 +54,3 @@ Tiny Birds
 
 } +> \phasor
 // =================== TINY BIRDS
-// RANGE: -3.12 - -3.14
-
-\noisep <+.pebl -3.12; // tiny !!! little birds
-\noisep <+.pebl -3.125; // tiny !!! little birds.
-\noisep <+.pebl -3.13; // tiny !!! little birds.
-\noisep <+.pebl -3.135; // tiny !!! little birds.
-\noisep <+.pebl -3.15; // tiny !!! little birds.
-
-// ==============================================
-//: First preliminary chosen transition
-// light bells to birds.
-// Starting at -03.01 ending at -3.15
-{
-	(-3.01, -3.02 .. -3.15) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		0.5.wait;
-	}
-}.fork;
-
-//:=========================================
-// WIDER REGION -2.6 - -3.15
-{
-	(-2.6, -2.61 .. -3.15) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		0.5.wait;
-	}
-}.fork;
-
-
-/// ==================================
-// OUTTAKES
-//: Full range bells to birds
-{
-	(-2.6, -2.61 .. -3.16) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		0.5.wait;
-	}
-}.fork;
-//: hint of bells to birds
-{
-	(-3.01, -3.02 .. -3.15) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		0.5.wait;
-	}
-}.fork;
-//: hint of bells to birds
-{
-	(-3.08, -3.09 .. -3.15) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		1.5.wait;
-	}
-}.fork;
-//:
-{
-	(-2.6, -2.61 .. -3.15) do: { | val |
-		postln("setting noisep to" + val);
-		\noisep <+.pebl val;
-		0.5.wait;
-	}
-}.fork;
