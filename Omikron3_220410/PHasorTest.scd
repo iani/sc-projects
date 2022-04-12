@@ -36,8 +36,8 @@ Must
 { var trig, rate, x, sr;
     // rate = MouseX.kr(0.2, 2, 1);
 	// rate = \rate.kr(1);
-	rate = \z1.bin.linlin(0.46, 0.7, -1, 1);
-    trig = \trig.tr(0); // set this to restart the phasor
+	rate = \z1.bin.linlin(0.46, 0.53, -1, 1);
+    trig = \trig.tr(0); // set this to resta rt the phasor
     sr = SampleRate.ir;
     x = Phasor.ar(trig, rate / sr);
     SinOsc.ar(
