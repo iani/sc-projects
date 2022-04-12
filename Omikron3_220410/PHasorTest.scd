@@ -25,8 +25,9 @@ Must
 } +> \phasor;
 //:
 \rate <+.phasor 0.25; //
+\rate <+.phasor 0.0; //
 \rate <+.phasor -0.25; // change directino
-\trig <+.phasor 1; // restart phasor from beginning
+\rate <+.phasor 5; // restart phasor from beginning
 //:
 { WhiteNoise.ar(0.1).dup }.play;
 
@@ -35,7 +36,7 @@ Must
 { var trig, rate, x, sr;
     // rate = MouseX.kr(0.2, 2, 1);
 	// rate = \rate.kr(1);
-	rate = \z1.bin.linlin(0.46, 0.47, -1, 1);
+	rate = \z1.bin.linlin(0.46, 0.7, -1, 1);
     trig = \trig.tr(0); // set this to restart the phasor
     sr = SampleRate.ir;
     x = Phasor.ar(trig, rate / sr);
