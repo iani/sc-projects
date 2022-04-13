@@ -1,1 +1,1 @@
-SenseData.setxyz(1, 2, 3, 4, 5, 6, 7, 8);
+SenseData().setxyz(1, 2, 3, 4, 5, 6, 7, 8);
