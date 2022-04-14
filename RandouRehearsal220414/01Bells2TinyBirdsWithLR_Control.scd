@@ -29,7 +29,7 @@ Tiny Birds
 		+ (phasor + 1 ** 15 + 10); // !
 		ofq = Latch.ar(ofq, saw);
 		oev = env ** 2 * (\oscamp.kr(0.5) * 10000 + 10); // !
-		mod = ofq * (\fqmul.kr(0.5) * 10 + 5/3); // !
+		mod = ofq * (\fqmul.kr
 		mod = SinOsc.ar(mod, 0, oev, ofq);
 		env = LPF.ar(env, 100); // !
 		osc = SinOsc.ar(mod, 0, env);
