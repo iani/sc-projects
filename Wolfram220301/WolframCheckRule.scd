@@ -12,9 +12,10 @@ a = w.run1Step;
 Check implementation in Wolfram class.
 */
 
-w = Wolfram(54, "0000000000000000000000000000000010000000000000000000000000000000");
+w = Wolfram``(54, "0000000000000000000000000000000010000000000000000000000000000000");
 w.makeStates(50);
 w.listStates;
+w.plot;
 //:
 /*  2 Mar 2022 15:15
 Check implementation in Wolfram class.
@@ -23,6 +24,7 @@ Check implementation in Wolfram class.
 w = Wolfram(60, "0000000000000000000000000000000010000000000000000000000000000000");
 w.makeStates(50);
 w.listStates;
+w.plot;
 //:
 /*  2 Mar 2022 15:15
 Check implementation in Wolfram class.
