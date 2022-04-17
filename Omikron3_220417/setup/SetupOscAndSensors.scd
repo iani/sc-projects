@@ -1,4 +1,3 @@
-// { "Setup".postln; } ! 50;
 OscGroups.enable;
 "enabled osc groups".postln;
 OscGroups.forward; // default: forward /sense/data
