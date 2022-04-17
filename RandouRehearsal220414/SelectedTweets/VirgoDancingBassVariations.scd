@@ -25,8 +25,26 @@ play{w=LFSaw;a=w.ar(-3,1)+1/2;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;
 {w=LFSaw;a=w.ar(-3,1)+1/3;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/6,6)!2} +> \vdb;
 {w=LFSaw;a=w.ar(-3,1)+1/5;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/6,6)!2} +> \vdb;
 
-//: basic control timbre by dancer
 
+//: Vary the source UGen
+
+{w=LFPulse;a=w.ar(-3,1)+1/5;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*30,0.5).tanh,1/6,3/6,6)!2} +> \vdb;
+{w=LFPulse;a=w.ar(-3,1)+1/5;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*10,0.5).tanh,1/6,3/6,6)!2} +> \vdb;
+
+{w=LFPulse;a=w.ar(-3,1)+1/5;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*40,0.5).tanh,1/6,3/6,6)!2} +> \vdb;
+{w=LFPulse;a=w.ar(-3,1)+1/5;f=Sweep.ar(0,3).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*10,0.5).tanh,1/6,3/2,6)!2} +> \vdb;
+
+{w=LFSaw;a=w.ar(-5,1)+1/5;f=Sweep.ar(0.1,0.2).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/1,6)!2} +> \vdb;
+
+{w=LFSaw;a=w.ar(-5,1)+1/5;f=Sweep.ar(0.1,2).floor;f=(f**3+f%8+4)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/1,6)!2} +> \vdb;
+
+{w=LFSaw;a=w.ar(-8,1)+1/8;f=Sweep.ar(0.1,2).floor;f=(f**3+f%8+40)*(f%3+3)%49*3;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/1,6)!2} +> \vdb;
+
+{w=LFSaw;a=w.ar(-8,1)+1/8;f=Sweep.ar(0.1,2).floor;f=(f**3+f%8+40)*(f%3+3)%49*4;CombN.ar(RLPF.ar(w.ar(f)*a,f**a*70,0.5).tanh,1/6,3/1,6)!2} +> \vdb;
+
+
+//: basic control timbre by dancer
+// So far unsuccessful:
 {
 	w=LFSaw;a=w.ar(-3,1)
 	+
