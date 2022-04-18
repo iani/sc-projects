@@ -15,5 +15,5 @@
 	sig = Pan2.ar(sig, \pos.kr(0)).adsr;
 	\amp.kr(0.05).lag(1) * sig
 	* (\z8.bin > 0.5).lag(1);		// gate
-} +> \albatross;
+} +> \phoenix2;
 )
