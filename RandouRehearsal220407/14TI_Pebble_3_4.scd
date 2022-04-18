@@ -33,5 +33,5 @@
 	}).adsr;
 	\amp.kr(0.05).lag(1) * sig
 	* (\z4.bin > 0.5).lag(1);		// gate
-} +> \albatross;
+} +> \albatross2;
 )

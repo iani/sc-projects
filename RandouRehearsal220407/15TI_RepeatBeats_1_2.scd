@@ -1,4 +1,5 @@
 // Repeat beats
+/*
 (
 {
 	var trg, env, frq, sig;
@@ -13,6 +14,7 @@
 	Out.ar(0, sig);
 } +> \phoenix;
 )
+*/
 // BETTER VERSION: !!!!!!!!!!!!!!!!!!!!!
 //: discrete period steps
 //
@@ -28,5 +30,5 @@
 	sig = \amp.kr(0.2).lag(1) * sig!2;
 	sig = sig.adsr * (\z2.bin > 0.5).lag(0.1);
 	Out.ar(0, sig);
-} +> \phoenix;
+} +> \albatross1;
 )

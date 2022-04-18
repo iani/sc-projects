@@ -11,5 +11,5 @@
 	sig = \amp.kr(0.2).lag(1) * sig!2;
 	sig = sig.adsr * (\z8.bin > 0.5).lag(0.1);
 	Out.ar(0, sig);
-} +> \albatross;
+} +> \phoenix2;
 )
