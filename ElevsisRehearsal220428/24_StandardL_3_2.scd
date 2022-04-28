@@ -1,6 +1,6 @@
 //:
 // 2. StandardL algorithm.
-
+(
 {
 	var div, sfq, std, rfq, rbw, res, mul, sig;
 	div = \srdiv.kr(0.5).linlin(0, 1, 10, 100);			// srdiv
@@ -18,3 +18,4 @@
 	sig = sig.adsr * 0.1 * (\z2.bin > 0.5).lag(0.1);
 	Out.ar(0, sig);
 } +> \albatross2;
+)

@@ -1,5 +1,5 @@
 // Repeat beats
-
+(
 {
 	var trg, env, frq, sig;
 	trg = \x1.bin.linlin(0.47, 0.56, 0.2, 20);
@@ -11,4 +11,5 @@
 	sig = \amp.kr(0.2).lag(1) * sig!2;
 	sig = sig.adsr * (\z2.bin > 0.5).lag(0.1);
 	Out.ar(0, sig);
-} +> \albatross2;
+} +> \albatross1;
+)

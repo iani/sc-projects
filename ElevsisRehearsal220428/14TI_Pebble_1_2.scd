@@ -1,5 +1,5 @@
 //:
-
+(
 // 1. InFeedback 'pebble' algorithm.
 {|bus = 50|
 	var sig;
@@ -31,6 +31,7 @@
 		pan = Latch.ar(WhiteNoise.ar, saw);
 		Pan2.ar(osc, pan, 1/4);		// mix down 4 channels at 1/4 amp
 	}).adsr;
-	\amp.kr(0.05).lag(1) * sig
-	* (\z4.bin > 0.5).lag(1);		// gate
+	\amp.kr(0.1).lag(1) * sig
+	* (\z2.bin > 0.5).lag(1);		// gate
 } +> \albatross1;
+)
