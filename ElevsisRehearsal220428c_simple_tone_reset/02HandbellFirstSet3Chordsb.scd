@@ -1,5 +1,5 @@
 {
-	SinOsc.ar(50 * , 0.0, 0.1)
+	SinOsc.ar(50 * 6, 0.0, 0.1)
 	//    +
 	//	SinOsc.ar(100 * Rand(1, 12).round, 0.0, 0.1)
 	* Lag.kr(\z1.bin > 0.5, 0.001)
