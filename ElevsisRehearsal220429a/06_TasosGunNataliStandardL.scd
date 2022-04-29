@@ -28,5 +28,6 @@
 	// \amp.kr(0.05).lag(1) * sig
 	// * (\z2.bin > 0.5).lag(1);		// gate
 	sig = sig.adsr * 0.1 * (\z4.bin > 0.5).lag(0.1);
+	sig = sig.dup;
 	Out.ar(0, sig);
 } +> \natali;

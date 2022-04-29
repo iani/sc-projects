@@ -25,6 +25,7 @@
 	sig = sig!2 * (amp / partialCount) * Line.kr(0, 1, 1); // fade in
 	// sig = JPverb.ar(sig); // reverb
 	sig = amp.lag(1) * sig.adsr * (\z2.bin > 0.5).lag(0.1);
+	sig = sig.dup;
 	Out.ar(0, sig);
 } +> \tasos;
 )
