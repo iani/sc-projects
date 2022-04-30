@@ -1,6 +1,6 @@
 // Based on A.Broz: Shepard-Risset glissando demo (2020-10-31)
 // http://sccode.org/1-5ee
-(
+
 // 3. Shepard tone
 {
 	var freq = \freq.kr(200);
@@ -25,7 +25,6 @@
 	sig = sig!2 * (amp / partialCount) * Line.kr(0, 1, 1); // fade in
 	// sig = JPverb.ar(sig); // reverb
 	sig = amp.lag(1) * sig.adsr * (\z2.bin > 0.5).lag(0.1);
-	sig = sig.dup;
+	sig = sig.dup; // * \amp.kr(1);
 	Out.ar(0, sig);
 } +> \tasos;
-)

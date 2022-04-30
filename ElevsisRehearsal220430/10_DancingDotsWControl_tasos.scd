@@ -17,7 +17,7 @@ Dancing Dots`
 	\noisea.kr(4/3), \noiseb.kr(4))*300,0.1).distort,2,2,40));
 	a// * (\x1.bamp(0.1, 0.5) < 0.51)
 
-	* \z2.bin.linexp(0.46, 0.55, 0.02, 0.9);
+	* \z2.bin.linexp(0.46, 0.55, 0.02, 0.9) * \amp.kr(1);
 	// a
 } +> \tasos;
 //:

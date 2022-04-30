@@ -12,8 +12,8 @@ n = { | r, f, d = 1 |
 		0,0.01
 	),n.(2,p,80),0.6).sum,8/5,8/5,60)*4e-4!2;
 	sig = sig * \z4.bin.linexp(0.46, 0.54, 0.001, 0.9);
-
-	Limiter.ar(sig, 0.2);
+	sig = sig * \amp.kr(1);
+	Limiter.ar(sig, 0.5);
 } +> \natali;
 //:
 // \z <+.natali 0.15;
