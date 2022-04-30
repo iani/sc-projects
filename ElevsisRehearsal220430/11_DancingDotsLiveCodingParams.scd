@@ -15,6 +15,6 @@
 //:
 \sawl <+.tasos 2;
 //:
-\amp <+.tasos 0.01;
+\amp <+.tasos 0.41;
 //:
 \amp <+.tasos 0.8;
