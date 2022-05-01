@@ -1,0 +1,1 @@
+\albatross1.stop(3);

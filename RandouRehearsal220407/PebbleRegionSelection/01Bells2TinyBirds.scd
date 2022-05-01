@@ -88,7 +88,7 @@ Tiny Birds
 	(-3.08, -3.09 .. -3.15) do: { | val |
 		postln("setting noisep to" + val);
 		\noisep <+.pebl val;
-		0.5.wait;
+		1.5.wait;
 	}
 }.fork;
 //:
