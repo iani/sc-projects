@@ -31,3 +31,4 @@
 	sig = sig.dup;
 	Out.ar(0, sig);
 } +> \natali;
+//:
