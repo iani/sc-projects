@@ -66,7 +66,7 @@ o = OSCFunc({|msg|
 	// a = MouseX.kr(0, 24);
 	a = \z1.bamp.linlin(0.45, 0.55, 0, 10);
 	b = Changed.kr(a.round);
-	c = Dseq([0.5], inf);
+	c = Dseq([2, 3], inf);
 	d = Demand.kr(b, 0, c);
 	e = Slope.kr(a).sign;
 	SendReply.kr(b, '/clav', d*e);
@@ -74,7 +74,20 @@ o = OSCFunc({|msg|
 } +> \tiA;
 )
 
-\tiA.stop;
+(
+// bass
+{
+	var key = \key.kr(36);
+	var sens = In.kr(0, 24);
+	var amp = Slope.kr(
+		\z1.bamp(0.1, 0.5).linlin(0.46, 0.56, 0, 1).lag(2)
+		// MouseX.kr(0, 1).lag(2)
+		// sens[3].linlin(0.45, 0.55, 0, 1).lag(2)
+	).abs.max(0).min(0.5);
+	var osc = PMOsc.ar(8000, 5000, amp**2*2, 0, amp);
+	osc!2 * \amp.kr(0.05);
+} +> \tiA;
+)
 
 (
 // bass
@@ -91,4 +104,4 @@ o = OSCFunc({|msg|
 } +> \tiB;
 )
 
-
+\tiA.stop;
