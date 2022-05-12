@@ -8,7 +8,7 @@
 	var interval = \itv.kr(1).max(1.15);
 	var partialCount = 30;
 	var octRange = interval ** (partialCount / 2);
-	var fq = \x1.bin.linlin(0.47, 0.56, -1, 1);
+	var fq = \z1.bin.linlin(0.47, 0.56, -1, 1);
 	var duration = 1 / fq.abs;
 	var direction = fq / fq.abs;
 	var cycle = 1 / (partialCount * duration) * direction;
