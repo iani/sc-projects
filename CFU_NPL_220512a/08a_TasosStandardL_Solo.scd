@@ -5,15 +5,15 @@
 	sfq = SampleRate.ir / div;
 	std = StandardL.ar(sfq, \stdk.kr(1));
 	rfq = \resfreq.kr(0.2).linlin(0, 1, 10, 5000);		// resfreq
-	rbw = \x1.bin.linlin(0.47, 0.56, 0.01, 100);		// resbwr
+	rbw = \x3.bin.linlin(0.47, 0.56, 0.01, 100);		// resbwr
 	res = Resonz.ar(std, rfq, rbw);
-	mul = \z1.bin.linlin(0.47, 0.56, 500, 50000);		// resinmul
+	mul = \z3.bin.linlin(0.47, 0.56, 500, 50000);		// resinmul
 	sig = SinOsc.ar(res * mul);
 	// sig = \amp.kr(0.2).lag(1) * sig;
 	// sig = Pan2.ar(sig, \pos.kr(0)).adsr;
 	// \amp.kr(0.05).lag(1) * sig
 	// * (\z2.bin > 0.5).lag(1);		// gate
-	sig = sig.adsr * 0.1 * (\z2.bin > 0.5).lag(0.1);
+	sig = sig.adsr * 0.1 * (\z4.bin > 0.5).lag(0.1);
 	sig = sig.dup;
 	Out.ar(0, sig);
 } +> \tasos;

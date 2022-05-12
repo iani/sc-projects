@@ -3,7 +3,7 @@
 SinOsc.ar(100 * 3, 0.0, 0.1).dup
 //    +
 //	SinOsc.ar(100 * Rand(1, 12).round, 0.0, 0.1)
-* (\x2.bamp(0.1, 0.5) < 0.51) * \amp.kr(0.5)
+* (\z2.bamp(0.1, 0.5) < 0.51) * \amp.kr(0.5)
 } +> \cfu1R;
 
 //:
@@ -12,7 +12,7 @@ SinOsc.ar(100 * 2, 0.0, 0.1).dup
 //    +
 //	SinOsc.ar(100 * Rand(1, 12).round, 0.0, 0.1)
 // * Lag.kr(\x2.bin < 0.51, 1) * \amp.kr(0.5)
-* (\x1.bamp(0.1, 0.5) < 0.51) * \amp.kr(0.5)
+* (\z1.bamp(0.1, 0.5) < 0.51) * \amp.kr(0.5)
 } +> \cfu1L;
 
 //:
