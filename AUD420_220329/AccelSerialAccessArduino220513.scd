@@ -3,7 +3,9 @@ SerialPort.devices;
 SerialPort.devices do: _.postln;
 //:
 
-~port = SerialPort.new("/dev/cu.usbmodem112101", 57600);
+//:
+
+~port = SerialPort.new("/dev/cu.usbmodem1101", 9600);
 //:
 
 ~port.read;
@@ -12,11 +14,10 @@ SerialPort.devices do: _.postln;
 //:
 {
 
-	30.do {
-		var xyz;
-		xyz = (1..6) collect: { ~port.read; };
-		xyz.postln;
-		1.wait;
+	inf.do {
+		var input;
+		input = ~port.read;
+		postln("input as char: " + input + "input class is:" + input.class);
 	};
 }.fork;
 
