@@ -1,0 +1,15 @@
+#+TITLE: Readme
+
+Performance scene setup: Sounds, sensors, players
+
+| Scene | Directive                    | CFU                  | NPL                                     |
+|-------+------------------------------+----------------------+-----------------------------------------|
+| A1    | No camera, dialogue          | Niki                 | Elli                                    |
+| A2    | Mirror slow-fast             | Niki or Xenia        | Foivos                                  |
+| A3    | Mirror level                 | Niki or Xenia        | Stefania                                |
+|-------+------------------------------+----------------------+-----------------------------------------|
+| B1    | Ryhythmic pattern <-> improv | free Niki + Xenia    | pattern Stefania, Foivos, Marina, Eleni |
+| B2    | Rhythhmic pattern <-> improv | pattern Niki + Xenia | free Stefania, Foivos, Marina, Eleni    |
+|-------+------------------------------+----------------------+-----------------------------------------|
+| C     | Tutti Improv (Ensemble) TBD! | all                  | all                                     |
+|-------+------------------------------+----------------------+-----------------------------------------|
