@@ -30,8 +30,8 @@
 //:
 {
 	// SinOsc.ar(100 * 5, 0, 0.1).dup
-	SinOsc.ar(50 * 10, 0, 0.1)
+	SinOsc.ar(50 * 5, 0, 0.1)
 	//    +
 	//	SinOsc.ar(100 * Rand(1, 12).round, 0.0, 0.1)
-	* Lag.kr(\z7.bin > 0.51, 1) * \amp.kr(1.0)
+	* Lag.kr(\z7.bin < 0.51, 1) * \amp.kr(1.0)
 } +> \npl2L;
