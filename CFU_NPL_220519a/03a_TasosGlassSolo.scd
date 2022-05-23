@@ -32,5 +32,5 @@
 		Pan2.ar(osc, pan, 1/4);		// mix down 4 channels at 1/4 amp
 	}).adsr;
 	\amp.kr(0.1).lag(1) * sig
-	* (\z3.bin > 0.5).lag(1);		// gate
+	* (\z4.bin > 0.5).lag(1);		// gate
 } +> \tasos;
