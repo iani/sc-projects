@@ -15,6 +15,16 @@
 
 Scene setup and Sensor allocation for final presentation
 
+
+* Sensor Allocation
+
+** Sensor allocation for Nafplion:
+
+Foivos: 5
+Virginia: 6
+Marina: 7
+Stefania: 8
+
 * Scene 1: 3 Dialogs (10 minutes)
 
 | Dialog name | Instruction             | CFU performer | CFU sounds | CFU sensors | NPL performer | NPL Sounds | NPL sensors   |
@@ -27,11 +37,17 @@ Scene setup and Sensor allocation for final presentation
 | Part   | Duratrion | Corfu  | Navplion                                                                            |
 | Part 1 | 3:30'     | Improv | Rhythm                                                                              |
 |        |           |        | Virginia, Stefania, Foivos, Marina // Corfu // -Marina-Stefania / -Fiovos -Virginia |
-| Part 2 | 5'        | Rhythm | Improv - solos. Elli, Stefania, Virginia, Foivos                                    |
+| Part 2 | 5'        | Rhythm | Improv duets: Virginia, Foivos (Iannis) and Elli, Stefania (Takumi)                 |
+
+Part 2 sensors and sounds:
+
+Virginia 6, Foivos 5: Iannis Zannos fixed sounds
+Elli 7, Stefania 8: Takumi Ikeda free live coding sounds
 
 Material: Single sine tones.
 Method: Note on - off through z parameter
-NPL: 4 persons, sensors 5, 6, 7, 8
+NPL: 4 persons, sensors 5, 6, 7, 8 | ------ Live coding for sensors 5, 6, 7, 8
+      Start with 7, then gradually add 5, 6, 8
 CFU: 2 persons, sensors 1, 2, 3, 4
 
 * Scene 3: Duel (10 minutes!)
@@ -50,13 +66,6 @@ Method:
 NPL: 4 persons, sensors 5, 6, 7, 8.  Note on - off through z parameter
 CFU: Niki, Xenia, *Takumi Ikeda Live coding*.
 
-** Sensor allocation for Nafplion:
-
-Foivos: 5
-Virginia: 6
-Marina: 7
-Stefania: 8
-
 ** Scene parts
 
 1. 2' Virginia, Stefania : Improv from Duel (Simple tones)
@@ -65,6 +74,7 @@ Stefania: 8
 3. 2' Foivos, Marina: Improv from Duel (Simple tones)
 3b. 2' Foivos, Marina: Simple tones + Xenia (CFU with TI Live coding)
 4. Virginia, Stefania, Marina
+5. Virginia, Stefania, Marina, Foivos
 
 ============================================
 ==== pause, transition to last section =====
