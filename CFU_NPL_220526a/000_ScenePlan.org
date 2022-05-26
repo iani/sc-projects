@@ -1,0 +1,62 @@
+#+TITLE: 000_sensor Allocation
+
+Scene setup and Sensor allocation for final presentation
+
+* Scene 1: 3 Dialogs (10 minutes)
+
+| Dialog name | Instruction  | CFU performer | CFU sounds | CFU sensors | NPL performer      | NPL Sounds | NPL sensors   |
+| Dialog 1 3' | Dialog       | Niki          | Glass      | 3, 4        | Elli               | Shepard    | 5, 6          |
+| Dialog 2 3' | Speed dialog | Niki          | Gun        | 3, 4        | (Elli?) / Natalia! | Glass      | (5, 6?) 7, 8! |
+| Dialog 3 3' | Level dialog | Niki          | StandardL  | 3, 4        | Elli               | Glass      | 5, 6          |
+
+* Scene 2: 2 Rhythms (6 minutes!)
+
+Material: Single sine tones.
+Method: Note on - off through z parameter
+NPL: 4 persons, sensors 5, 6, 7, 8
+CFU: 2 persons, sensors 1, 2, 3, 4
+
+| Part | CFU role       | NPL role       | Duration |
+|   1. | improv.        | rhythm pattern | 3'       |
+|   2. | rhythm pattern | improv.        | 3'       |
+
+| NPL | Foivos, Natalia, ... |
+| CFU | Niki, Xenia          |
+
+* Scene 3: Duel (10 minutes!)
+
+TEXT INSTRUCTIONS URGENT!!!!!!!!
+
+Formal strategy model: Concerto Grosso. "Tutti - Concertino i.e. Duet or Solo".
+
+CHOREOGRAPHIC DIRECTION:
+
+CFU: Hari Marini
+NPL: Stella Dimitrakopoulou
+
+Material: Single sine tones.
+Method:
+NPL: 4 persons, sensors 5, 6, 7, 8.  Note on - off through z parameter
+CFU: Niki, Xenia, *Takumi Ikeda Live coding*.
+
+1. 2' Tutti 1
+2. 1' Solo or Duet 1. CFU! (TI). Sensors: 1, 2, 3, 4
+3. 1' Tutti 2
+4. 1' Solo or Duet 2 CFU! (TI). Sensors: 1, 2, 3, 4
+5. 1' Tutti 3
+6. 1' Solo or Duet 3 CFU! (TI). Sensors: 1, 2, 3, 4
+7. 2' Finale: All together: Tutti 4 - with Duet. (TI)
+
+* Scene 4
+
+Solo with Elli and Live coding with Takumi Ikeda
+Finally:
+Invitation to audience: Extra participation by workshop audience.
+Optional: Also CFU: Niki, Xenia.
+
+Sensors:
+A. Elli: 5, 6,  5 minutes
+B. Audience: 7, 8  5 minutes
+
+Optional for part B. :
+CFU: 1, 2, 3, 4.
