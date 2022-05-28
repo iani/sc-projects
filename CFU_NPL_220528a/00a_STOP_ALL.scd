@@ -1,0 +1,14 @@
+\tasos.stop(5);
+\natali.stop(5);
+\tasosL.stop(10);
+\tasosR.stop(10);
+\nataliL.stop(10);
+\nataliR.stop(10);
+\cfu1R.stop(5);
+\cfu1L.stop(5);
+\cfu2R.stop(5);
+\cfu2L.stop(5);
+\npl1R.stop(5);
+\npl1L.stop(5);
+\npl2R.stop(5);
+\npl2L.stop(5);
