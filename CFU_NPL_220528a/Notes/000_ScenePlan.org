@@ -18,8 +18,8 @@
 
 ** Sensor allocation for Corfu
 
-Niki: 1, 2
-Xenia: 3, 4
+Xenia: 1, 2
+Niki: 3, 4
 
 ** Sensor allocation for Nafplion:
 
@@ -42,7 +42,7 @@ Elli in part 3: 5, 6
 
 * Scene 2: 2 Rhythms (7 minutes)
 
-| Part   | Duratrion | Corfu  | Navplion                                                                            |
+| Part   | Durarion  | Corfu  | Navplion                                                                            |
 | Part 1 | 3:30'     | Improv | Rhythm                                                                              |
 |        |           |        | Virginia, Stefania, Foivos, Marina // Corfu // -Marina-Stefania / -Foivos -Virginia |
 | Part 2 | 5'        | Rhythm | Improv duets: Virginia, Foivos (Iannis) and Elli, Stefania (Takumi)                 |
