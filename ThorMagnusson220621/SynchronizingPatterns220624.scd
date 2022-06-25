@@ -1,25 +1,15 @@
-//: 22 Jun 2022 07:49
-{
-	var t;
-	t = TempoClock.default;
-	21 do: {
-		//  t.timeToNextBeat.round(0.000000001).postln;
-		  t.timeToNextBeat.postln;
-		0.1.wait;
-	}
-}.fork(TempoClock.default, 1);
+//: 24 Jun 2022 11:31
 //:
-SynthDef(\click, {arg freq=50; Out.ar(0, Ringz.ar(Impulse.ar(0.1), [freq, freq+1], 0.1) * Line.ar(1,0,0.1,1,0,2))}).add;
-
+SynthDef(\click, { | freq |
+	Out.ar(0, Ringz.ar(Impulse.ar(0.1), [freq, freq+1], 0.1)
+		* Line.ar(\amp.kr(0.5),0,0.1,1,0,2)
+	)}
+).add;
 //:
-
-// get elapsed time, round up to next second
-v = Main.elapsedTime.ceil;
-
-// create two clocks in a 5:2 relation, starting at time v.
-t = TempoClock(1, 0, v);
-u = TempoClock(0.4, 0, v);
-
+t = TempoClock(0.5);
+u = TempoClock(0.4);
+//:
+(degree: )
 // start two functions at beat zero in each clock.
 t.schedAbs(0, { arg beat, sec; Synth(\click, [\freq, 1950]); 1 });
 u.schedAbs(0, { arg beat, sec; Synth(\click, [\freq, 350]); 1 });
