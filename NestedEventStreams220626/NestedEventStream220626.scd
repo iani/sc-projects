@@ -9,7 +9,9 @@ Event.addEventType(\test, {
 //:
 () +> \test;
 (type: \note) ++> \test;
-(type: [\test, \note, \test, \note, \note].pseq, dur: 2) ++> \test;
+(
+type: [\test, \note, \test, \note, \note, \test, \test].pseq,
+dur: [2, 2, 2, 2, 2, 0.4, 0.4].pseq) ++> \test;
 
 //:
 \test.start(4);
