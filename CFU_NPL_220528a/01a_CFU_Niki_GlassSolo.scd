@@ -1,5 +1,3 @@
-// Based on A.Broz: Shepard-Risset glissando demo (2020-10-31)
-// http://sccode.org/1-5ee
 //: 1. InFeedback 'pebble' algorithm.
 {|bus = 51|
 	var sig;
