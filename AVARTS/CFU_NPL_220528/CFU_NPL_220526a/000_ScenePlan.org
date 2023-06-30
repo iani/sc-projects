@@ -1,0 +1,111 @@
+#+TITLE: SCENE PLAN AND INSTRUCTIONS
+* Performers names
+
+** Corfu
+
+| 1. Elli Lymperopoulou | Ελλη Λυμπεροπούλου |
+| 2. Niki  Matzona      | Νική Ματζώνα       |
+| 3. Xenia Kitzoglou    | Ξένια Κιτζόγλου    |
+
+** Nafplion
+
+1. Φοίβος-Θεοδόσιος Μεμελετζόγλου
+2. Μαρίνα Παπασταμάτη
+3. Βιργινία-Μέλια Στογιαννίδου
+4. Στεφανία Συμεωνίδου
+
+* Sensor Allocation
+
+** Sensor allocation for Corfu
+
+Niki: 1, 2
+Xenia: 3, 4
+
+** Sensor allocation for Nafplion:
+
+Elli - in part 1: 5, 6
+
+Foivos: 5
+Virginia: 6
+Marina: 7  // Elli in part 2: sensor 7
+Stefania: 8
+
+Elli in part 3: 5, 6
+
+
+* Scene 1: 3 Dialogs (10 minutes)
+
+| Dialog name | Instruction             | CFU performer | CFU sounds | CFU sensors | NPL performer | NPL Sounds | NPL sensors   |
+| Dialog 1 3' | Dialog Cameras Off      | Niki          | Glass      | 3, 4        | Elli          | Shepard    | 5, 6          |
+| Dialog 2 3' | Speed dialog Cameras On | Niki          | Gun        | 3, 4        | Virginia      | Glass      | (5, 6?) 7, 8! |
+| Dialog 3 3' | Level dialog Cameras On | Niki          | StandardL  | 3, 4        | Stefania      | Glass      | 5, 6          |
+
+* Scene 2: 2 Rhythms (7 minutes)
+
+| Part   | Duratrion | Corfu  | Navplion                                                                            |
+| Part 1 | 3:30'     | Improv | Rhythm                                                                              |
+|        |           |        | Virginia, Stefania, Foivos, Marina // Corfu // -Marina-Stefania / -Foivos -Virginia |
+| Part 2 | 5'        | Rhythm | Improv duets: Virginia, Foivos (Iannis) and Elli, Stefania (Takumi)                 |
+
+
+** Scene 2, Part 1 sounds
+
+- Navplion: Simple rhythm pattern with simple sine tones.
+- Corfu: Improvisaiont with simple sine tones (or partly later also more complex sounds?)
+
+** Scene 2, Part 2 sensors and sounds:
+
+- Corfu: Simple rhythm pattern with simple sine tones.
+- Navplion: Improvisation duets as follows:
+  - Virginia sensor 6, Foivos sensor 5: Iannis Zannos fixed sounds (as rehearsed till now).
+  - Elli sensor 7, Stefania sensor 8: Takumi Ikeda free live coding sounds.
+
+
+* Scene 3: Duel (10 minutes!)
+** Introductory early notes
+TEXT INSTRUCTIONS URGENT!!!!!!!!
+
+Formal strategy model: Concerto Grosso. "Tutti - Concertino i.e. Duet or Solo".
+
+CHOREOGRAPHIC DIRECTION:
+
+CFU: Hari Marini
+NPL: Stella Dimitrakopoulou
+
+Material: Single sine tones.
+Method:
+NPL: 4 persons, sensors 5, 6, 7, 8.  Note on - off through z parameter
+CFU: Niki, Xenia, *Takumi Ikeda Live coding*.
+
+** Scene parts
+
+Sounds:
+Navplion: Simple tones
+Corfu: Live Coding TI.  Sensors 1, 2, 3, 4
+
+1. 2' Virginia, Stefania : Improv from Duel (Simple tones) / Corfu: -
+2. 2' Virginia, Foivos : Improv from Duel (Simple tones)   / Corfu: Enter Niki (1, 2) (p., Crescendo....)
+2b. 2' Virginia, Foivos : Improv from Duel (Simple tones)  / Corfu: Enter Xenia (3, 4) (more crescendo)
+3. 2' Foivos, Marina: Improv from Duel (Simple tones)      / Corfu: Niki and Xenia (1, 2, 3, 4) CLIMAX!
+3b. 2' Foivos, Marina: Simple tones                        / Corfu: Exit Niki (diminuendo)
+4. Virginia, Stefania, Marina                              / Corfu: Exit Xenia (diminuendo)
+5. Virginia, Stefania, Marina, Foivos                      / Corfu: -
+
+============================================
+==== pause, transition to last section =====
+
+Sensors 5, 6 -> Elli.
+
+* Scene 4
+
+Solo with Elli and Live coding with Takumi Ikeda
+Finally:
+Invitation to audience: Extra participation by workshop audience.
+Optional: Also CFU: Niki, Xenia.
+
+Sensors:
+A. Elli: 5, 6,  5 minutes
+B. Audience: 7, 8  5 minutes
+
+Optional for part B. :
+CFU: 1, 2, 3, 4.

@@ -1,0 +1,8 @@
+#+TITLE: Osc Group Client
+
+IP to use:
+172.104.250.242
+
+Command:
+
+OscGroupClient 172.104.250.242 22242 22246 22244 22245 iani ianipass checkGroup test

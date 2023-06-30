@@ -1,0 +1,82 @@
+* Objectives
+Modeling algorithms for choosing the next tactic in a zero-sum game, using the M7 matrix from Xenakis FM, p. 121.
+
+This is a step-by-step detailed study to clarify both the mechanism of the minimax algorithm and its implementation.
+
+* Game, player, tactic, matrix
+
+** Basics: Game, taking turns: Players, player, opponent, tactic
+*** The two players: player and opponent
+The game has two players, X and Y.
+The two players take turns in choosing a tactic (see below about tactic).
+At each time, the player choosing their tactic is called the *player* and the other player is called the *opponent*.
+*** Taking turns
+Here is an example of X and Y taking turns:
+
+X starts the game:
+X chooses a tactic, thus X is the player, Y is the opponent.
+Next, Y chooses a tactic, thus Y is the player, X is the opponent.
+etc.
+
+The following shows the roles of X and Y a game with 5 moves, starting with X
+
+| move number | player | opponent |
+|           1 | X      | Y        |
+|           2 | Y      | X        |
+|           3 | X      | Y        |
+|           4 | Y      | X        |
+|           5 | X      | y        |
+
+In the implementation, X has the number 0 and Y has the number 1.
+** Taking turns
+The algorithm for switching the roles between player and opponent when taking turns is:
+
+#+begin_src sclang
+var player, opponent;
+// initialize player and opponent for a game where X plays first:
+player = 0;
+opponent = 1;
+~switchPlayers { // toggle values between 0 and 1:
+	player = 1 - player;
+	opponent = 1 - opponent;
+};
+#+end_src
+
+Here is a simulation showing the turns of X and Y for 10 moves:
+#+begin_src sclang
+var player, opponent;
+// initialize player and opponent for a game where X plays first:
+player = 0;
+opponent = 1;
+~switchPlayers = { // toggle values between 0 and 1:
+	player = 1 - player;
+	opponent = 1 - opponent;
+};
+10 do: {
+    postf("player: %, opponent: %\n", player, opponent);
+    ~switchPlayers.value;
+};
+#+end_src
+
+** tactics
+
+In Duel by I. Xenakis, a tactic is one of 6 sections of the score, which are also described as types of textures or sounds in Formalized Music and in the score of the piece.
+
+Score of Duel, p. 3 / Formalized Music, p. 113:
+
+#+begin_quote
+- I     Pointillisme des cordes  / (Clusters of sonic grains such as pizzicati, ...)
+- II    Tenues des cordes        / (Parallel sustained strings with fluctuations)
+- III   Glissandi croisés        / (Networks of intertwined string glissandi)
+- IV    Percussion normale       / (stochastic percussion sounds)
+- V     Vents                    / (Stochastic wind instrument sounds)
+- VI    Silence                  / (Silence)
+#+end_quote
+
+Acccording to the score of Duel (p. 3), the two players, i.e. the two conductors (X, Y) conducting two orchestras, can choose and play one of these sonic constructs ("constructions sonores").  During the piece they take turns choosing the next sonic construct to be played by their orchestras.  In the score, these are called "six tactiques fondamentales".  Xenakis adds that the conductors may choose to make the orchestra play simultaneous combinations of two or four of these fundamental tactics ("chacun des chefs peut faire jouer par son orchestre certaines combinaisons simultanées, par deux ou par trois des tactiques fondamentales").
+
+The rules for choosing amongst the tactics are described in the following section, [[*Matrix of the game][Matrix of the game]].
+
+** Matrix of the game
+
+According to the score of Duel, p. 3, the Matrix of the game (MATRICE DE JEU), is a 2 dimensional matrix (Array) of 6 rows and 6 columns.  Each row represents one of the 6 tactics that player X can choose, and each column the tactics of player Y.

@@ -1,0 +1,1 @@
+{ "this is teset 1 start start start".postln; } ! 10;

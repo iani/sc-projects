@@ -1,0 +1,1 @@
+{ "this is test 2 STOP STOP STOP STOP".postln; } ! 10;

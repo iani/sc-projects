@@ -1,0 +1,34 @@
+// Repeat beats
+/*
+(
+{
+	var trg, env, frq, sig;
+	trg = \x1.bin.linlin(0.47, 0.56, 0.2, 20);
+	trg = Impulse.ar(trg);
+	env = EnvGen.ar(Env.perc(0, 0.5), trg);
+	frq = \z1.bin.linlin(0.47, 0.56, 100, 8000);
+	frq = env ** 20 * frq + 50;
+	sig = SinOsc.ar(frq, 0, env);
+	sig = \amp.kr(0.2).lag(1) * sig!2;
+	sig = sig.adsr * (\z2.bin > 0.5).lag(0.1);
+	Out.ar(0, sig);
+} +> \phoenix;
+)
+*/
+// BETTER VERSION: !!!!!!!!!!!!!!!!!!!!!
+//: discrete period steps
+//
+(
+{
+	var trg, env, frq, sig;
+	trg = \x1.bin.linlin(0.47, 0.56, 1, 20);
+	trg = Impulse.ar(trg.round(4) + 2);
+	env = EnvGen.ar(Env.perc(0, 0.5), trg);
+	frq = \z1.bin.linlin(0.47, 0.56, 100, 8000);
+	frq = env ** 20 * frq + 50;
+	sig = SinOsc.ar(frq, 0, env);
+	sig = \amp.kr(0.2).lag(1) * sig!2;
+	sig = sig.adsr * (\z2.bin > 0.5).lag(0.1);
+	Out.ar(0, sig);
+} +> \albatross1;
+)

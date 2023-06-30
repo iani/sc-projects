@@ -1,0 +1,15 @@
+#+TITLE: A_duet Sound Choice
+
+For controls by partner:
+
+Natali controls on - off sound of Tasos
+Tasos controls on - off sound of Natali
+
+Sound pairings tried out:
+
+| 0 | Tasos           | Natali          |
+|---+-----------------+-----------------|
+| 1 | standard l      | birds - pebbles |
+| 2 | pebbles         | shepard glider  |
+| 3 | standard l      | repeat gun      |
+| 4 | birds - pebbles | standard l      |

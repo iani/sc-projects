@@ -1,0 +1,16 @@
+#+TITLE: Readme Audiofiles
+# Mon Aug  9 17:05:13 2021
+
+Any audiofiles placed in this directory will be loaded to buffers in the default server when it boots.
+
+Each buffer is stored as a single entry under ...
+
+The file name extensions used can be any one of:
+#+begin_src
+   .wav
+   .WAV
+   .aif
+   .aiff
+#+end_src
+
+These files are intentionally ignored by git and are not uploaded to github because of restrictions in file size.  See file .gitignore for details.

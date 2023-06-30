@@ -1,0 +1,51 @@
+/*  9 Jun 2023 15:21
+Trigger with slope: Produce sound when a parameter's change is higher than
+a threshold.
+*/
+//:
+\default +> \test;
+//:
+Server.default.scope;
+
+//: This is a preliminary prototype
+{
+	var env, src;
+	env = Env.perc(0.5, 1.0);
+	src = PinkNoise.ar(0.1) * env.kr(gate:
+		Amplitude.kr(Slope.kr(\x1.sr.lag(0.1))) > 0.9, doneAction: 0
+	);
+	Ringz.ar(src, \z2.sr.exp(30, 6000).lag(0.1),
+		\z1.sr.lag(0.1).linlin(0.01, 1.0, 0.01, 2.6)
+	) * 0.1
+} +> \natali;
+//: This is a preliminary prototype
+{
+	var env, src;
+	env = Env.perc(0.01, 2);
+	src = PinkNoise.ar(0.1) * env.kr(gate:
+		Amplitude.kr(Slope.kr(\x2.sr.lag(0.1))) > 0.9, doneAction: 0
+	);
+	Ringz.ar(src, \z2.sr.exp(30, 6000).lag(0.1), ) * 0.1
+} +> \natali;
+//:
+//:Sat 10 Jun 2023 19:26
+/*
+	The entire rehearsal of this afternoon was run with the code below.
+*/
+{
+	var env, src;
+	env = Env.perc(0.9, 0.9);
+	src = PinkNoise.ar(0.3) * env.kr(gate:
+		Amplitude.kr(Slope.kr(\x1.sr.lag(0.1))) > 0.9, doneAction: 0
+	);
+	Resonz.ar(src, \z2.sr.exp(30, 6000).lag(0.1), 0.1) * 20
+} +> \natali;
+//:
+{
+	var env, src;
+	env = Env.perc(0.9, 0.9);
+	src = PinkNoise.ar(0.3) * env.kr(gate:
+		Amplitude.kr(Slope.kr(\x1.sr.lag(0.1))) > 0.9, doneAction: 0
+	);
+	Resonz.ar(src, \z2.sr.exp(30, 6000).lag(0.1), 0.1) * 20
+} +> \natali;

@@ -1,0 +1,2 @@
+\ping.stop;
+\pong.stop;

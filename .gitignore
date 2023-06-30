@@ -1,0 +1,11 @@
+.DS_Store
+*/.DS_Store
+.idea
+*.wav
+*.WAV
+*.aiff
+*.aif
+*.AIFF
+tmp/
+*.aif
+DuelRevisited

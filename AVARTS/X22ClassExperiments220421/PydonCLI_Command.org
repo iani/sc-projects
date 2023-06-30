@@ -1,0 +1,9 @@
+#+TITLE: Pydon Cli_command
+
+pydoncli.py -c stella220418_12345678.xml -s /dev/tty.usbserial-DN02PPI1
+
+* COMMENT Note:
+substitute the right /dev/tty name for your computer.
+On a Linux computer it usually is this one:
+
+/dev/ttyUSB0

@@ -1,0 +1,8 @@
+#+TITLE: Osc Groups Vpn
+
+* OpenVPN IP
+OpenVPN profile ip number use this one: 139.162.177.87
+This is for connecting to VPN (not the ip used by OscGroups!)
+* OscGroups Server IP  (use to launch the client on command line locally)
+
+OscGroupClient 173.137.0.173 22242 22246 22244 22245 iani ianpass checkGroup2 test

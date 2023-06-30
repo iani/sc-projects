@@ -1,0 +1,13 @@
+#+TITLE: 000_sound Timeline
+
+|---+---+-----------------------------+--------------------+-------|
+| ! | 0 | Kotaro                      | Natali             | Tasos |
+|---+---+-----------------------------+--------------------+-------|
+| # | 1 | -                           | 23d_moanAlbatross2 |       |
+| # | 2 | 10d_static2                 | ""                 |       |
+| # | 3 | 12d_pulse2                  | ""                 |       |
+| # | 4 | ""                          | 22d_moanAlbatross  |       |
+| # | 5 | 06d_slope                   | ""                 |       |
+| # | 6 | ""                          | 18d_gongAlbatross  |       |
+| # | 7 | 25d_pulsingBreathAlbatross2 |                    |       |
+#+TBLFM: $2=@-1 + 1

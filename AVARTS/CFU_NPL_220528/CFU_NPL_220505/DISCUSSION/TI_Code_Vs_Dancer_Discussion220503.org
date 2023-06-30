@@ -1,0 +1,29 @@
+#+TITLE: Ti Code Vs Dancer Discussion220503
+
+n my past works and performances, I have used pitch detection, etc.
+like a "physical random generator".
+For example, when I improvise on an electric guitar, SC responds to it
+and changes multiple parameters.
+Then, when I pause the playing at the point where an interesting sound
+arises, the parameters and acoustics are maintained.
+In other words, it can be said that the style is to keep rolling the
+dice until I get my favorite number.
+Trying to do the same thing with 20 to 30 knobs and faders would spoil
+the speed of the performance.
+I have always thought that such a slow response is a problem when
+improvising with a PC.
+
+Now, since I wrote the synths according to the performance style
+above, there may be a little problematic if applied directly to
+dancers.
+The dancers are constantly in motion, and of course their movements
+include their intentions.
+As a source of parameters, they are completely different in nature
+from the guitar, which is played in a haphazard way.
+Unlike solo performances, changes are swift.
+
+So, there is no need to change the format of the parameters.
+I would like to use the raw parameters to create a sound that is more
+indicative of the dancer's movements.
+Also this may go easier for the dancers too, to understand the
+relationship between their movement and sound.

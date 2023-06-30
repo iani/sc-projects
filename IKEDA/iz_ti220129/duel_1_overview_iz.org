@@ -1,0 +1,32 @@
+#+TITLE: Duel_1_overview_iz
+
+* Terminology
+
+** Random move
+
+The player chooses at random from one of the 6 tactics with equal probability:
+
+#+begin_src sclang
+tactics[player] = tactic = (0..5).choose;
+#+end_src
+
+** Optimal move (optimal tactic)
+
+The player chooses the tactic which has the greatest chances for success based on the tactic chosen by the opponent and the values of the matrix of the game matrix.  This is found by obtaining the row corresponding to the opponent's tactic in the opponent's matrix and then selecting from that row the element that has the least value.  If there are several elements which have that minimum value, then select one of them at random.
+
+For example:
+
+Suppose that player X has played tactic 1 ("I"). Then, in order to choose the optimal move, player Y should do the following:
+
+
+
+** Weighted optimal move (or tactic)
+
+* duel_1 : alternating random move with optimal tactic answer
+
+Alternating random move with optimal move response.
+
+X -> random move
+Y ->
+
+The current player chooses one tactic at random. Then the opponent chooses the optimal tactic aco

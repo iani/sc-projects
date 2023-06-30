@@ -1,0 +1,355 @@
+
+Routine({
+	3.do({
+		~sismos.removeAt(0)});
+	2.do({
+		~sismos[30].removeAt(0)});
+	2.do({
+		~sismos[29].removeAt(0)});
+	2.do({
+		~sismos[28].removeAt(0)});
+	2.do({
+		~sismos[27].removeAt(0)});
+	2.do({
+		~sismos[26].removeAt(0)});
+	2.do({
+		~sismos[25].removeAt(0)});
+	2.do({
+		~sismos[24].removeAt(0)});
+	2.do({
+		~sismos[23].removeAt(0)});
+	2.do({
+		~sismos[22].removeAt(0)});
+	2.do({
+		~sismos[21].removeAt(0)});
+	2.do({
+		~sismos[20].removeAt(0)});
+	2.do({
+		~sismos[19].removeAt(0)});
+	2.do({
+		~sismos[18].removeAt(0)});
+	2.do({
+		~sismos[17].removeAt(0)});
+	2.do({
+		~sismos[16].removeAt(0)});
+	2.do({
+		~sismos[15].removeAt(0)});
+	2.do({
+		~sismos[14].removeAt(0)});
+	2.do({
+		~sismos[13].removeAt(0)});
+	2.do({
+		~sismos[12].removeAt(0)});
+	2.do({
+		~sismos[11].removeAt(0)});
+	2.do({
+		~sismos[10].removeAt(0)});
+	2.do({
+		~sismos[9].removeAt(0)});
+	2.do({
+		~sismos[8].removeAt(0)});
+	2.do({
+		~sismos[7].removeAt(0)});
+	2.do({
+		~sismos[6].removeAt(0)});
+	2.do({
+		~sismos[5].removeAt(0)});
+	2.do({
+		~sismos[4].removeAt(0)});
+	2.do({
+		~sismos[3].removeAt(0)});
+	2.do({
+		~sismos[2].removeAt(0)});
+	2.do({
+		~sismos[1].removeAt(0)});
+}).play;
+
+//randomizador de datos por porcentaje de pesos
+
+Routine({
+//Voz1
+~voz=Array.new(25);
+a=Pwrand([0.7,1,1.4,2,2.8,5,7],~sismos[30].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz.add(a.next)
+});
+~voz;
+//Voz2
+~voz2=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1.3+0.3.rand,1.6+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[29].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz2.add(a.next)
+});
+	~voz2;
+//Voz3
+~voz3=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[28].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz3.add(a.next)
+});
+~voz3;
+//Voz4
+~voz4=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[27].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz4.add(a.next)
+});
+~voz4;
+//Voz5
+~voz5=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[27].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz5.add(a.next)
+});
+~voz5;
+//Voz6
+~voz6=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[26].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz6.add(a.next)
+});
+~voz6;
+//Voz7
+~voz7=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[25].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz7.add(a.next)
+});
+~voz7;
+//Voz8
+~voz8=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[24].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz8.add(a.next)
+});
+~voz8;
+//Voz9
+~voz9=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[23].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz9.add(a.next)
+});
+~voz9;
+//Voz10
+~voz10=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[22].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz10.add(a.next)
+});
+~voz10;
+//Voz11
+~voz11=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[21].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz11.add(a.next)
+});
+~voz11;
+//Voz12
+~voz12=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[20].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz12.add(a.next)
+});
+~voz12;
+//Voz13
+~voz13=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[19].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz13.add(a.next)
+});
+~voz13;
+//Voz14
+~voz14=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[18].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz14.add(a.next)
+});
+~voz14;
+//Voz15
+~voz15=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[17].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz15.add(a.next)
+});
+~voz15;
+//Voz16
+~voz16=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[16].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz16.add(a.next)
+});
+~voz16;
+//Voz17
+~voz17=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[15].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz17.add(a.next)
+});
+~voz17;
+//Voz18
+~voz18=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[14].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz18.add(a.next)
+});
+~voz18;
+//Voz19
+~voz19=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[13].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz19.add(a.next)
+});
+~voz19;
+//Voz20
+~voz20=Array.new(50);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[12].asInteger.normalizeSum,50).asStream;
+50.do({
+	~voz20.add(a.next)
+});
+~voz20;
+//Voz21
+~voz21=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[11].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz21.add(a.next)
+});
+~voz21;
+//Voz22
+~voz22=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[10].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz22.add(a.next)
+});
+~voz22;
+//Voz23
+~voz23=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[9].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz23.add(a.next)
+});
+~voz23;
+//Voz24
+~voz24=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[8].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz24.add(a.next)
+});
+~voz24;
+//Voz25
+~voz25=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[7].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz25.add(a.next)
+});
+~voz25;
+//Voz26
+~voz26=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[6].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz26.add(a.next)
+});
+~voz26;
+//Voz27
+~voz27=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[5].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz27.add(a.next)
+});
+~voz27;
+//Voz28
+~voz28=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[4].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz28.add(a.next)
+});
+~voz28;
+//Voz29
+~voz29=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[3].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz29.add(a.next)
+});
+~voz29;
+//Voz30
+~voz30=Array.new(100);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[2].asInteger.normalizeSum,100).asStream;
+100.do({
+	~voz30.add(a.next)
+});
+~voz30;
+//Voz31
+~voz31=Array.new(25);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[1].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz31.add(a.next)
+});
+~voz31;
+//Voz32
+~voz32=Array.new(500);
+a=Pwrand(
+	[0.4+0.3.rand,0.9+0.2.rand,1+0.3.rand,1.3+0.5.rand,2.1+0.7.rand,2.8+0.9.rand,4+1.rand
+],~sismos[0].asInteger.normalizeSum,25).asStream;
+25.do({
+	~voz32.add(a.next)
+});
+	~voz32;}).play

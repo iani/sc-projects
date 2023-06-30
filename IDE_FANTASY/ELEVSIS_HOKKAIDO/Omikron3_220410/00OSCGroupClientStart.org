@@ -1,0 +1,28 @@
+#+TITLE: 000osc Group Client Start
+
+* OscGroupClient start - server accessible without vpn
+(runs in linode of IZ)
+
+OscGroupClient 172.104.250.242 22242 22246 22244 22245 <user> <userpass> checkGroup2 test
+* OscGroupClient start - server accessible WITH vpn !
+(runs in linode of NC)
+
+Here we have 2 IPs.
+
+*** IP 2 USE THIS ONE !!!!!!!!!!!
+
+OscGroupClient 173.137.0.173 22242 22246 22244 22245 <user> <userpass> checkGroup2 test
+
+This is the internal LAN type ip of the client from inside vpn.
+This is most safe to use if you are connected via openVPN from mobile phone etc.
+*** DANGER: DO NOT USE THIS ONE IP 1
+
+can cause a kind of overflow?????
+
+OscGroupClient 139.162.152.223 22242 22246 22244 22245 <user> <userpass> checkGroup2 test
+
+This is the public ip of the oscgroupclient.
+It may run from within VPN, but not for sure.
+If it does not run, then try the second IP, IP 2:
+
+alternative:
