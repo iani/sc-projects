@@ -7,7 +7,7 @@
 0.04 @>.jun \amp;
 //:
 {
-	SinOsc.ar(\freq.br(200)).dup.fader;
+	SinOsc.ar(\freq.br(200)).dup.fader(amp: 0.04);
 } +> \jun;
 //:
 { XLine.kr(200, 200 * 8, 80) } @>.jun \freq;
@@ -23,4 +23,9 @@
 		mul: 0.04
 	);
 } +> \jun;
+//:test
 //:
+{
+	\rate.br(1);
+	SinOsc.ar(\freq.br(200)).dup.fader;
+}.play;

@@ -3,19 +3,25 @@ Basic playfunc
 */
 
 {
-	var buf;
+	var buf, test;
 	// TMP debugging messages:
 	postln("debugging playbuf. ~buf is" + ~buf);
 	postln("debugging playbuf. ~buf.buf is" + ~buf.buf);
 
 	buf = ~buf.buf;
+
+	test = \rate.br(1);
 	PlayBuf.ar(
 		buf.numChannels,
 		buf,
-		\rate.br(~rate ? 1),
-		\trigger.br(1),
-		\startpos.br(~startpos ? 0),
-		\loop.br(~loop ? 0),
+		1,
+		// \rate.br(~rate ? 1),
+		1,
+		// \trigger.br(1),
+		0,
+		// \startpos.br(~startpos ? 0),
+		0,
+		// \loop.br(~loop ? 0),
 		Done.freeSelf
 	)
 }
