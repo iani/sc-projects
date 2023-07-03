@@ -56,4 +56,57 @@
 	{ LFNoise1.kr(0.2).range(0, 2pi) } ! r,
 	{ LFNoise1.kr(0.2 exprand: 10).range(0, 0.1) } ! r,
 ).amix } +> \sines;
+//:+Mon  3 Jul 2023 19:35
+500 @>.test \freq; // initialize! (stop previous synth func.)
+\test play: { SinOsc.ar(\freq.br(500), 0, 0.1).dup };
+1.wait;
+{ LFNoise0.kr(20).range(XLine.kr(500, 100, 10), XLine.kr(500, 6000, 10)) } @>.test \freq;
+10.wait;
+\test stop: 5;
+//:+variant with many sines.
+//Need to assign different control names for freq of individual sines
+//controlled by discrete ugens!
+500 @>.test \freq; // initialize! (stop previous synth func.)
+\test play: {
+	{ | i |
+		SinOsc.ar(format("freq%", i).asSymbol.br(500).lag(1), 0, 0.1)
+	}.dup(10).amix.dup
+};
+1.wait;
+{ | i |
+	{
+		LFNoise0.kr(20).range(XLine.kr(500, 100, 10), XLine.kr(500, 6000, 10))
+	} @>.test format("freq%", i).asSymbol;
+} ! 10;
+10.wait;
+// \test stop: 5;
 //:
+{
+	loop {
+		0.5.exprand(5).wait;
+		Array.rand(10, 400, 4000) @>.test \freq;
+		0.1.exprand(1.2).wait;
+		Array.rand(10, 140, 400) @>.test \freq;
+	}
+}.fork;
+//:
+500 @>.test \freq0;
+500 @>.test \freq1;
+500 @>.test \freq2;
+500 @>.test \freq3;
+500 @>.test \freq4;
+500 @>.test \freq5;
+500 @>.test \freq6;
+500 @>.test \freq7;
+500 @>.test \freq8;
+600 @>.test \freq9;
+//:
+{ SinOsc.ar(\freq0.br(600), 0, 0.1).dup } +> \test;
+
+100 @>.test \freq0;
+
+//:Testing immediate stopping of control players
+500 @>.test \freq; // initialize! (stop previous synth func.)
+\test play: { SinOsc.ar(\freq.br(500), 0, 0.1).dup };
+{ LFNoise0.kr(20).range(XLine.kr(500, 100, 10), XLine.kr(500, 6000, 10)) } @>.test \freq;
+100 @>.test \freq;
