@@ -40,7 +40,7 @@
 	src * \amp.br(1);
 } +> \jun1
 //:
-
+{  SinOsc.ar(400, 0, 0.1) * (\x3.sr > 0.5).lag(1) } +> \asayo;
 //:
 { Decay.kr(Impulse.kr(1)) } @>.jun1 \amp;
 //:

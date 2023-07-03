@@ -5,5 +5,5 @@ Prototype draft
 // the next line is implied by the folder name in which the file is based:
 // ~buf = \crickets;
 
-~synthfunc = \playbuf;
+~sfname= \playbuf;
 // ~startpos = ...

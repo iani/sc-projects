@@ -5,7 +5,7 @@ To try out
 {
 	var env, src;
 	env = Env.perc(0.9, 0.9);
-	src = SinOsc.ar(\z2.sr.exp(30, 6000).lag(0.1), 0, 0.3).dup * env.kr(gate:
+	src = 0.2 * SinOsc.ar(\z2.sr.exp(30, 6000).lag(0.1), 0, 0.3).dup * env.kr(gate:
 		Amplitude.kr(Slope.kr(\x1.sr.lag(0.1))) > 0.9, doneAction: 0
 	);
 } +> \natali
