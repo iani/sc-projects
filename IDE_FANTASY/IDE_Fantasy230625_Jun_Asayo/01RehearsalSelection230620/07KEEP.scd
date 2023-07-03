@@ -11,7 +11,7 @@
 			 \x2.sr.lag(0.51)
 			 + \y2.sr.lag(0.51)
 			 + \z2.sr.lag(0.51)
-		)).lag(1.5)) + 100 ) *
+		)).lag(1.5))) *
 	 env.kr(gate:
 		 Amplitude.kr(Slope.kr(
 			 \x2.sr.lag(0.01)

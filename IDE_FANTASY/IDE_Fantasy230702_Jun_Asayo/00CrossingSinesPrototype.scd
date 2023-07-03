@@ -20,10 +20,13 @@
 
 {
 	SinOsc.ar(\freq.br(600)).dup.fader(amp: 0.05) * (\z2.sr > 0.5).lag(1);
-} +> \jun2;24{
+} +> \jun2;
+//?
+{
 	SinOsc.ar(\freq.br(650)).dup.fader(amp: 0.05) * (\z3.sr > 0.5).lag(1);
 } +> \asayo2;
-32/:Manual control of sensor busses
+//:
+// Manual control of sensor busses
 \z1.sensorbus.set(1);
 \z2.sensorbus.set(1);
 //:
