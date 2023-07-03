@@ -90,16 +90,6 @@
 	}
 }.fork;
 //:
-500 @>.test \freq0;
-500 @>.test \freq1;
-500 @>.test \freq2;
-500 @>.test \freq3;
-500 @>.test \freq4;
-500 @>.test \freq5;
-500 @>.test \freq6;
-500 @>.test \freq7;
-500 @>.test \freq8;
-600 @>.test \freq9;
 //:
 { SinOsc.ar(\freq0.br(600), 0, 0.1).dup } +> \test;
 
@@ -110,3 +100,16 @@
 \test play: { SinOsc.ar(\freq.br(500), 0, 0.1).dup };
 { LFNoise0.kr(20).range(XLine.kr(500, 100, 10), XLine.kr(500, 6000, 10)) } @>.test \freq;
 100 @>.test \freq;
+//:glides
+{ SinOsc.ar(\freq.br(400), 0, 0.1).dup } +> \test;
+//:+Testing lag time
+1000@1 @>.test \freq;
+//{ XLine.kr(400, 1000, 1) } @>.test \freq;
+1.wait;
+'NOW'.postln;
+1000 @>.test \freq;
+//:* // too small values of lag and wait may leave lines on, causing artefacts
+var lag;
+lag = 0.05.exprand(0.95);
+(200.rrand(8000)@(lag)) @>.test \freq;
+(lag + 0.02).wait;
