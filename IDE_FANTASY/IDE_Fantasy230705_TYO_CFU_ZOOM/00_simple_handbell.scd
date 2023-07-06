@@ -1,12 +1,16 @@
+/*  5 Jul 2023 20:29
+
+*/
+
 /*  2 Jul 2023 18:12
 
 */
 //:
-{  SinOsc.ar(200, 0, 0.1) * (\x1.sr > 0.5).lag(0.2) } +> \jun1;
-{  SinOsc.ar(300, 0, 0.1) * (\x2.sr > 0.5).lag(0.2) } +> \jun2;
-
-{  SinOsc.ar(400, 0, 0.1) * (\x3.sr > 0.5).lag(0.3) } +> \asayo1;
-{  SinOsc.ar(500, 0, 0.1) * (\x4.sr > 0.5).lag(0.3) } +> \asayo2;
+{  SinOsc.ar(200, 0, 0.1) * (\x5.sr > 0.5).lag(0.2) } +> \mary1;
+{  SinOsc.ar(300, 0, 0.1) * (\x7.sr > 0.5).lag(0.2) } +> \mary2;
+//:
+{  SinOsc.ar(400, 0, 0.1) * (\x9.sr > 0.5).lag(0.3) } +> \yoshimitsu1;
+{  SinOsc.ar(500, 0, 0.1) * (\x10.sr > 0.5).lag(0.3) } +> \yoshimitsu2;
 //:
 {  SinOsc.ar(200 * 1.1, 0, 0.05) * (\x1.sr > 0.5).lag(0.2) } +> \jun1;
 {  SinOsc.ar(300 * 1.1, 0, 0.05) * (\x2.sr > 0.5).lag(0.2) } +> \jun2;

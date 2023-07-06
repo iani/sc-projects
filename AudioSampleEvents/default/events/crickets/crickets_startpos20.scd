@@ -6,4 +6,5 @@ Prototype draft
 // ~buf = \crickets;
 
 ~sfname = \playbuf;
+~startpos = 20; // start 20 seconds in the file
 // ~startpos = ...
