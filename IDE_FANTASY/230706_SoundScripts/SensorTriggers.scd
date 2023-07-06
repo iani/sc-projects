@@ -1,7 +1,7 @@
 /*  6 Jul 2023 15:42
 Triggering events from the sensors
 */
-//:sending a trigger
+//:Start: sending a trigger
 { SendReply.kr(Impulse.kr(1), '/hello', 1) } +> \sendreply;
 //:listening to the trigger
 '/hello' >>> { (dur: 0.1, degree: 10.rand).play; };
@@ -73,8 +73,7 @@ Triggering events from the sensors
 { (Amplitude.kr(Slope.kr(\x1.sr)) +
 	Amplitude.kr(Slope.kr(\y1.sr)) +
 	Amplitude.kr(Slope.kr(\z1.sr))).lag(0.15) > 0.5 } @>.trigenv \trig;
-//:combine 3d slope + env
-// in one function (for class)
+//:= !!! = combine 3d slope + env in one function (for class)
 {
 	var trig;
 	Fader(); // make releasable;
