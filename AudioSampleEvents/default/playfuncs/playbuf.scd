@@ -5,7 +5,5 @@ The settings could be names of Classes that contain specs, such as:
 PlayBuf_, PV_Magabove_ etc.  See folder
 */
 nil // PlayFunc provides default
-//:
-{   // provides PlayBuf.ar ugen with br controls
-	PlayBuf_.ar()
-}
+//: provides PlayBuf.ar ugen with br controls
+{ PlayBuf_.ar() }

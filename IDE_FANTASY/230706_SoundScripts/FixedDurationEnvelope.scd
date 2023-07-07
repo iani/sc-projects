@@ -25,15 +25,15 @@ f = { | dur = 1 |
     envgen = EnvGen.kr(env, Trig.kr(1, dur - ad max: 0.1), doneAction: Done.freeSelf);
 };
 { SinOsc.ar(400, 0, 0.1).dup * f.(0.9) }.play;
-//:
+//:duration 0.5
 { SinOsc.ar(400, 0, 0.1).dup * f.(0.5) }.play;
-//:
+//:duration 0.15
 { SinOsc.ar(400, 0, 0.1).dup * f.(0.15) }.play;
-//:
+//:duration 0.05
 { SinOsc.ar(400, 0, 0.1).dup * f.(0.05) }.play;
-//:
+//:duration 3.05
 { SinOsc.ar(400, 0, 0.1).dup * f.(3.05) }.play;
-//:arbitrary duration, fixed attack/decay
+//:early prototype: arbitrary duration, fixed attack/decay
 {
 	var env, trig, dur = 0.03, ad = 0.02;
 	dur = 3;
