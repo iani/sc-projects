@@ -1,4 +1,4 @@
-//:--[0] Sensor setup
+//: Sensor setup
 { // setup trigger from sensor input
 	var trig, envsig;
 	// Fader(); // make releasable;
@@ -15,11 +15,11 @@
 // setup response from trigger
 '/on' >>> { "on".postln; 1.0 @>.default \vol };
 '/off' >>> { "off".postln;  0.0 @>.default \vol };
-//:--[1] \crickets
+//: \crickets
 Grain0_.bplay(\crickets, (startframe: 0, rate: 0.2, vol: 1.0));
-//:--[1] \default
+//: \default
 Grain0_.bplay(\weddell, (startframe: 0, rate: 0.2, vol: 1.0));
-//:--[1] \default
+//: \default
 Grain0_.bplay(\default, (startframe: 0, rate: 0.2, vol: 1.0));
-//:--[1] \default
+//: \default
 Grain0_.bplay(\fones, (startframe: 0, rate: 0.2, vol: 1.0));

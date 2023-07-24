@@ -3,7 +3,7 @@
 { // setup trigger from sensor input
 	var trig, envsig;
 	// Fader(); // make releasable;
-	trig = 	AmpSlopeXyz() > 1.5;
+	trig = 	AmpSlopeXyz(9) > 1.5;
 	envsig = EnvGen.kr(
         Env([0, 1, 1, 0], [0.02, 1, 0.3], releaseNode: 2),
         gate: trig,
@@ -24,11 +24,28 @@ Grain0_.bplay(\crickets, (startframe: 40000, rate: 0.2, vol: 0.0));
 currentEnvironment;
 //:
 1.0 @>.default \vol;
-//: Modify position randomly
+//: Modify position randoml y
 {  LFNoise0.kr(5).range(0, 1) } @>.default \pos;
 //: Modify position by x
-{  \x1.sr } @>.default \pos;
+{  \x9.sr } @>.default \pos;
 //:
-{  \z1.sr } @>.default \rate;
+{  \z9.sr } @>.default \rate;
 //:
-Grain0_.bplay(\crickets, (startframe: 40000, rate: 0.2, vol: 1.0));
+Grain0_.bplay(\crickets, (startframe: 0, rate: 0.2, vol: 1.0));
+//:
+Grain0_.bplay(\weddell, (startframe: 0, rate: 0.2, vol: 1.0));
+//:
+Grain0_.bplay(\default, (startframe: 0, rate: 0.2, vol: 1.0));
+//:
+Grain0_.bplay(\pilgrims, (startframe: 0, rate: 0.2, vol: 1.0));
+//:+
+Buffer.all do: { | b |
+	Grain0_.bplay(b.postln, (startframe: 0, rate: 0.2, vol: 0.0));
+	20.wait;
+}
+//:
+Buffer.all.size * 20;
+//:
+Buffer.all.size;
+//:
+().play;
