@@ -1,0 +1,7 @@
+/*selections for default saved at 230725_111353*/
+//: default phasebuf (0)
+( 'vol': 1, 'endframe': 138224, 'buf': 'default', 'ampctl': [ 'tokyo', 'amp', 1, 'off', 0, 1, 'lin' ], 
+  'paramctl': ( 'rate': [ 'tokyo', 'rate', 1, 'off', 0.01, 10, 'lin' ], 'vol': [ 'tokyo', 'vol', 1, 'off', 0, 10, 'lin' ] ), 'startframe': 116694, 'rate': 1, 'playfunc': 'phasebuf' )
+//: default magabove (17)
+( 'vol': 1, 'endframe': 88992, 'buf': 'default', 'ampctl': [ 'tokyo', 'amp', 1, 'off', 0, 1, 'lin' ], 
+  'paramctl': ( 'rate': [ 'tokyo', 'rate', 1, 'off', 0.01, 10, 'lin' ], 'vol': [ 'tokyo', 'vol', 1, 'off', 0, 10, 'lin' ], 'thresh': [ 'tokyo', 'thresh', 1, 'off', 0, 80, 'lin' ] ), 'startframe': 55548, 'rate': 1, 'thresh': 80, 'playfunc': 'magabove' )
