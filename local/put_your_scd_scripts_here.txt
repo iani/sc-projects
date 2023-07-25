@@ -1,0 +1,6 @@
+Any files that you put here will be ignored by git if they end in .scd
+
+These files are ignored by git, so you can keep pulling updates
+from github even if you put files here,
+
+Use this to store scripts that you do not need to share.
