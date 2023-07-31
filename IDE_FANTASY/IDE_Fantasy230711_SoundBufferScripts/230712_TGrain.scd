@@ -43,7 +43,8 @@ b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
 //:echo- like from small segments multipled: GrainEcho
 (
 {
-    var trate, dur, clk, pos, pan;
+    var trate, dur, clk, pos, pan, b;
+	b = \default.buf;
     trate = 12;
     dur = MouseY.kr(0.2,24,1) / trate;
     clk = Impulse.kr(trate);
