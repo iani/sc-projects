@@ -10,3 +10,5 @@ tmp/
 *.aif
 DuelRevisited
 local/*.scd
+local/*
+debug*
