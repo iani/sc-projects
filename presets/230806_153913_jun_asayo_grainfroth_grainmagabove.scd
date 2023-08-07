@@ -1,0 +1,11 @@
+/*selections for bird_crickets saved at 230806_153913*/
+//: bird_crickets grainfroth (0)
+( 'selectionNum': 0, 'ampctl': [ 'asayo', 'amp', 1, 'off', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'startframe': 221667, 'trate': 0.0, 
+  'pos': 0.91780821917808, 'player': 'asayo', 'vol': 0.21350680761452, 'endframe': 2304222, 'buf': 'bird_crickets', 
+  'paramctl': ( 'vol': [ 'asayo', 'vol', 4, 'x', 0.2, 2.0, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'trate': [ 'asayo', 'trate', 3, 'z', 0.1, 0.5, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'pos': [ 'asayo', 'pos', 3, 'x', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ] ), 'playfunc': 'grainfroth' )
+/*selections for crickets saved at 230806_153913*/
+//: crickets grainmagshift (0)
+( 'selectionNum': 0, 'ampctl': [ 'jun', 'amp', 1, 'off', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'startframe': 264632, 'rate': 1, 
+  'stretch': 1.4697260273973, 'trate': 50, 'pos': 0, 'player': 'jun', 'vol': 1, 
+  'endframe': 1742046, 'shift': -278.08219178082, 'buf': 'crickets', 'paramctl': ( 'vol': [ 'jun', 'vol', 1, 'off', 0, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'shift': [ 'jun', 'shift', 2, 'z', -200.0, 200.0, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'rate': [ 'jun', 'rate', 1, 'z', 0.2, 2.5, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'stretch': [ 'jun', 'stretch', 2, 'x', 0.2, 2.5, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 
+  'trate': [ 'jun', 'trate', 1, 'off', 1, 120, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'pos': [ 'jun', 'pos', 1, 'x', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ] ), 'playfunc': 'grainmagshift' )

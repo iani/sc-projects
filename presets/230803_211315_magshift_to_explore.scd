@@ -1,0 +1,11 @@
+/*selections for bird_crickets saved at 230803_211315*/
+//: bird_crickets magshift (0)
+( 'selectionNum': 0, 'ampctl': [ 'tokyo', 'amp', 1, 'off', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'startframe': 95000, 'rate': 0.13708385261356, 
+  'stretch': 1, 'player': 'tokyo', 'vol': 0.58568420174725, 'endframe': 2311673, 'shift': 0, 
+  'buf': 'bird_crickets', 'paramctl': ( 'rate': [ 'tokyo', 'rate', 1, 'off', 0.01, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'vol': [ 'tokyo', 'vol', 1, 'off', 0, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'stretch': [ 'tokyo', 'stretch', 3, 'x', 0.5, 2.0, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'shift': [ 'tokyo', 'shift', 4, 'z', -100.0, 100.0, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ] ), 'playfunc': 'magshift' )
+/*selections for fones saved at 230803_211315*/
+//: fones grainecho (0)
+( 'dur': 1, 'selectionNum': 0, 'ampctl': [ 'tokyo', 'amp', 1, 'off', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'startframe': 25903, 
+  'rate': 1, 'trate': 0, 'pos': 0, 'player': 'tokyo', 'vol': 3.1544379808594, 
+  'endframe': 126947, 'buf': 'fones', 'paramctl': ( 'rate': [ 'tokyo', 'rate', 3, 'z', 1.0, 4.0, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'vol': [ 'tokyo', 'vol', 1, 'off', 0, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'dur': [ 'tokyo', 'dur', 4, 'x', 0.5, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'trate': [ 'tokyo', 'trate', 4, 'z', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 
+  'pos': [ 'tokyo', 'pos', 3, 'x', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ] ), 'playfunc': 'grainecho' )

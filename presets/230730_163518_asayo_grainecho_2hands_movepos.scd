@@ -1,0 +1,6 @@
+/*selections for bird_crickets saved at 230730_163518*/
+//: bird_crickets grainecho (0)
+( 'dur': 1, 'selectionNum': 0, 'ampctl': [ 'tokyo', 'amp', 1, 'xyz', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'startframe': 290589, 
+  'rate': 1, 'trate': 0, 'pos': 0, 'player': 'tokyo', 'vol': 5.337670190363, 
+  'endframe': 2205496, 'buf': 'bird_crickets', 'paramctl': ( 'rate': [ 'tokyo', 'rate', 1, 'z', 0.01, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'vol': [ 'tokyo', 'vol', 1, 'off', 0, 10, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'dur': [ 'tokyo', 'dur', 1, 'x', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 'trate': [ 'tokyo', 'trate', 2, 'z', 0.2, 0.9, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ], 
+  'pos': [ 'tokyo', 'pos', 2, 'z', 0, 1, 'lin', "x.lag(1).exp(500, 1000)", "(1 - z.lag(1)).exp(500, 1000)", "(x + y + z).lag(1).exp(500, 1000)" ] ), 'playfunc': 'grainecho' )
