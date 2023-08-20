@@ -16,7 +16,7 @@
 {
 SinOsc.ar(\freq.br(200) *
 		([5, 6, 7, 8] / 5 * { LFDNoise0.kr(0.5 rrand: 3.0).range(0.99, 1.1) } ! 4)
-	)).amix.dup * (\z1.sr > 0.5).lag(1);
+	).amix.dup * (\z1.sr > 0.5).lag(1);
 } +> \jun;
 //:
 //:source jun 1 - variation
